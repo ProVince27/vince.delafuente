@@ -1,7 +1,7 @@
 {
-    "name": "sanpakyou027/laravel",
+    "name": "sanpakyou027/icg-project",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Initial project setup",
     "keywords": [
         "framework",
         "laravel"
