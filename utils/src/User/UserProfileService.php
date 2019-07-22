@@ -15,7 +15,6 @@ class UserProfileService {
     public function setPassword($password, User $user = null) {
         $user = $this->getUser($user);
         $user->password = $password;
-
         return $this;
     }
 

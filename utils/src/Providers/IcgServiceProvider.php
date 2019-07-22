@@ -55,8 +55,7 @@ class IcgServiceProvider extends ServiceProvider {
     private function baseCommand() {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                GitPushNewRelease::class,
-                // CreateView::class,
+                GitPushNewRelease::class
             ]);
         }
     }

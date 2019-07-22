@@ -49,7 +49,9 @@ class ImageService {
                 $output = sprintf('%s/%s', $directory, $name, $size);
                 $image->save($output . '.png');
             }
-        } catch (\Exception $ex) {
+            $image->destroy();
+        } catch (\Exception $e) {
+            throw new $e->getMessage();
         }
     }
 

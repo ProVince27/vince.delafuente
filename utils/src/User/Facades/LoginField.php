@@ -1,10 +1,9 @@
 <?php
 
-namespace Icg\Authentication\Facades;
+namespace Icg\User\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Icg\Authentication\Helpers\LoginField as LoginFieldClass;
-use Icg\Services\Helpers\LoginFieldHelper;
+use Icg\User\Helpers\LoginField as LoginFieldClass;
 
 class LoginField extends Facade {
 

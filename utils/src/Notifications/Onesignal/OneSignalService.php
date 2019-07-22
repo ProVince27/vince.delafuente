@@ -1,5 +1,5 @@
 <?php
-namespace App\Services\Notifications;
+namespace Icg\Notifications\Onesignal;
 
 use Exception;
 
@@ -7,7 +7,7 @@ class OneSignalService {
 
     protected $app_id = null;
 
-    protected $endpoint = null;
+    protected $endpoint = "https://onesignal.com/api/v1/notifications";
 
     protected $rest_key = null;
 
@@ -30,7 +30,7 @@ class OneSignalService {
     public function __construct($appId = null, $rest_key = null , $endpoint = null) {
         $this->app_id   = $appId ?: config('services.onesignal.app_id');
         $this->rest_key = $rest_key ?: config('services.onesignal.rest_api_key');
-        $this->endpoint = $endpoint ?? 'https://onesignal.com/api/v1/notifications';
+        $this->endpoint = $endpoint ?? $this->endpoint;
     }
 
     /* @todo check if the array is a valid format */

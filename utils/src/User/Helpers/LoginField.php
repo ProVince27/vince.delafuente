@@ -1,6 +1,6 @@
 <?php
 
-namespace Icg\Authentication\Helpers;
+namespace Icg\User\Helpers;
 
 /**
  *  Check what field should be used when validating an account.
