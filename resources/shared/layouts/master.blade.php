@@ -8,7 +8,7 @@
     <meta name="base-url" content="{{ url('/') }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', config('app.name', 'iConcept') )</title>
-
+    {{-- styles --}}
     @stack('style')
 </head>
 <body class = "@yield('body-class','sidebar-mini fixed')" >
@@ -16,8 +16,10 @@
         @yield('content')
     </div>
 </body>
+
 {{-- scripts --}}
-{{-- <script src="{{ asset('js/manifest.js') }}"></script>
-<script src="{{ asset('js/vendor.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script> --}}
+@routes
+<script src="{{ asset('dist/js/manifest.js') }}"></script>
+<script src="{{ asset('dist/js/vendor.js') }}"></script>
+<script src="{{ asset('dist/js/app.js') }}"></script>
 </html>
