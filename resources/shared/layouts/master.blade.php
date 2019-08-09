@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', config('app.name', 'iConcept') )</title>
     {{-- styles --}}
+    <link href="{{ asset("dist/css/vendor.css") }}" rel="stylesheet">
+    <link href="{{ asset("dist/css/app.css") }}" rel="stylesheet">
     @stack('style')
 </head>
 <body class = "@yield('body-class','sidebar-mini fixed')" >

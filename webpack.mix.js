@@ -24,4 +24,9 @@ mix.webpackConfig({
     }
 })
 
-mix.extract(['vue','jquery','admin-lte'])
+mix.extract([
+    'jquery',
+    'admin-lte',
+    'vue',
+    'lodash'
+])
