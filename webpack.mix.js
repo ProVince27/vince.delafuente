@@ -11,5 +11,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+// mix.js('resources/js/app.js', 'public/js')
+// .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/app.js','dist/js')
+    
+
+/* set the build path */
+mix.webpackConfig({
+    output: {
+        path: path.resolve(__dirname, 'public'),
+        // chunkFilename: 'dist/[name].js',
+    }
+})
+
+mix.extract([
+    'jquery',
+    'admin-lte',
+    'vue',
+    'lodash'
+])
