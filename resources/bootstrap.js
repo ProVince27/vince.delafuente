@@ -17,20 +17,20 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * a simple convenience so we don't have to attach every token manually.
  */
 
-// let token = document.head.querySelector('meta[name="csrf-token"]');
+let token = document.head.querySelector('meta[name="csrf-token"]');
 
-// if (token) {
-//     window.APP_TOKEN = token.content;
-//     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-// } else {
-//     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-// }
+if (token) {
+    window.APP_TOKEN = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
 
 // /* set the global variable */
-// let baseUrl = document.head.querySelector('meta[name="base-url"]')
+let baseUrl = document.head.querySelector('meta[name="base-url"]')
 
-// if(baseUrl){
-//     window.BASE_URL = baseUrl.content
-// } else {
-//     console.warning('Base url is not setup.');
-// }
+if(baseUrl){
+    window.BASE_URL = baseUrl.content
+} else {
+    console.warning('Base url is not setup.');
+}

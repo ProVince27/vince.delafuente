@@ -21,6 +21,6 @@ class ResourceServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        Blade::component('shared.views.template.template', 'template');
+        Blade::component('shared.views.template.vue-x-template.blade', 'template');
     }
 }
