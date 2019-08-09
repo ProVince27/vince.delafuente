@@ -24,11 +24,6 @@
     {{-- End-Right-Sidebar --}}
 
     {{-- Footer --}}
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-inline">
-                Anything you want
-            </div>
-            <strong>Copyright &copy; 2014-2019 <a href="#">AdminLTE.io</a>.</strong> All rights reserved.
-        </footer>
+        @include('shared.views.footer.footer')
     {{-- End-Footer --}}
 @endsection
