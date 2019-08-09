@@ -2,9 +2,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <img src="{{config('project.images.default')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="{{config('project.images.default')}}" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
     </a>
 
     <!-- Sidebar -->

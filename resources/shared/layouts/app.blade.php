@@ -1,4 +1,6 @@
 @extends('shared.layouts.master')
+@section('body-class','hold-transition sidebar-mini layout-fixed')
+
 @section('content')
     {{-- Navbar --}}
         @include('shared.views.header.header')

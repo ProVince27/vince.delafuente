@@ -11,6 +11,6 @@ class Controller extends BaseController {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-        return view('shared.layouts.backend');
+        return view('shared.layouts.app');
     }
 }
