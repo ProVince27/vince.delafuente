@@ -8,6 +8,6 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller {
     
     public function index(){
-        return view('app.dashboard.index-dashboard');
+        return view('app.dashboard.dashboard-admin.dashboard-admin');
     }
 }

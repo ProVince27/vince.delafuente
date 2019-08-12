@@ -21,7 +21,7 @@
 
 {{-- scripts --}}
 @routes
-<script src="{{ asset('dist/js/manifest.js') }}"></script>
-<script src="{{ asset('dist/js/vendor.js') }}"></script>
-<script src="{{ asset('dist/js/app.js') }}"></script>
+<script src="{{ mix('dist/js/manifest.js') }}"></script>
+<script src="{{ mix('dist/js//dist/js/vendor.js') }}"></script> {{-- // bug on webpack 4 the fix will be applied on webpack 5 --}}
+<script src="{{ mix('dist/js//dist/js/app.js') }}"></script> {{-- // bug on webpack 4 the fix will be applied on webpack 5 --}}
 </html>

@@ -12,7 +12,9 @@
     
     {{-- Content-Wrapper-Page --}}
         <div class="content-wrapper">
-            @yield('app-content')
+            <div v-cloak>
+                @yield('app-content')
+            </div>
         </div>
     {{-- End-Content-Wrapper-Page --}}
 

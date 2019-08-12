@@ -22,7 +22,7 @@ class ResourceServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        Blade::component('shared.views.template.vue-x-template.blade', 'template');
+        Blade::component('shared.views.template.vue-x-template', 'template');
         Blade::directive('datetime', function ($format = "Y-m-d") {
             return now()->format($format);
         });
