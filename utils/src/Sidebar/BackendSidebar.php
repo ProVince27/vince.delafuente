@@ -18,7 +18,7 @@ class BackendSidebar implements Sidebar {
     public function __construct(Menu $menu, Container $container) {
         $this->menu      = $menu;
         $this->container = $container;
-        $this->user = Auth::User();
+        // $this->user = Auth::User();
     }
 
     public function build() {
@@ -26,6 +26,7 @@ class BackendSidebar implements Sidebar {
         /**
          * @todo sort the array before generations
          */
+        
         try {
             foreach ($sidebars as $sort => $sidebar) {
                 if (class_exists($sidebar["class"])) {
@@ -57,7 +58,7 @@ class BackendSidebar implements Sidebar {
         // $sidebar = [];
         // $menu = config("spt.sidebar");
         // return $this->filterMenuByPermissions($menu, $permissions);
-        return config('sidebar.pages');
+        return config('master.sidebar');
     }
 
     private function filterMenuByPermissions($menu, $permissions) {

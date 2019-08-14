@@ -2,6 +2,8 @@
 
 return [
 
+    'editor'          => 'vscode',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -174,7 +176,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\ResourceServiceProvider::class
+        App\Providers\ResourceServiceProvider::class,
+        
+        Maatwebsite\Sidebar\SidebarServiceProvider::class,
+        Icg\Sidebar\SidebarServiceProvider::class,
 
     ],
 

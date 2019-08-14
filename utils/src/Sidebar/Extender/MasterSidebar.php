@@ -43,6 +43,6 @@ class MasterSidebar implements SidebarInterface, SidebarExtender {
     }
 
     public static function isEnabled() {
-        return (new static )->enabled;
+        return (new static)->enabled;
     }
 }

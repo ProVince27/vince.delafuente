@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da115a3bf77acb4da9441495f08e393a",
+    "content-hash": "eaeb19d231b571f7c4a8971a0a18ea25",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1738,6 +1738,60 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "sanpakyou027/laravel-sidebar",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sanpakyou027/Laravel-Sidebar.git",
+                "reference": "24174feb34a6ba2cc26c114ea80f0085f4384e2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sanpakyou027/Laravel-Sidebar/zipball/24174feb34a6ba2cc26c114ea80f0085f4384e2c",
+                "reference": "24174feb34a6ba2cc26c114ea80f0085f4384e2c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~5.0",
+                "illuminate/container": "~5.0",
+                "illuminate/contracts": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/support": "~5.0",
+                "illuminate/view": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Maatwebsite\\Sidebar\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maatwebsite.nl",
+                    "email": "patrick@maatwebsite.nl"
+                }
+            ],
+            "description": "A sidebar builder for Laravel",
+            "keywords": [
+                "acp",
+                "laravel",
+                "menu",
+                "sidebar"
+            ],
+            "support": {
+                "source": "https://github.com/sanpakyou027/Laravel-Sidebar/tree/2.2.0"
+            },
+            "time": "2019-08-14T08:40:13+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
