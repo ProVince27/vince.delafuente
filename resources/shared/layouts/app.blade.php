@@ -1,5 +1,5 @@
 @extends('shared.layouts.master')
-@section('body-class','hold-transition sidebar-mini layout-fixed')
+@section('body-class','hold-transition sidebar-mini layout-fixed layout-navbar-fixed')
 
 @section('content')
     {{-- Navbar --}}
@@ -12,12 +12,14 @@
     
     {{-- Content-Wrapper-Page --}}
         <div class="content-wrapper">
-            @yield('app-content')
+            <div v-cloak>
+                @yield('app-content')
+            </div>
         </div>
     {{-- End-Content-Wrapper-Page --}}
 
     {{-- Right-Sidebar --}}
-        <aside class="control-sidebar control-sidebar-dark">
+        <aside class="control-sidebar control-sidebar-light">
             <div class="p-3">
             <h5>Title</h5>
             <p>Sidebar content</p>

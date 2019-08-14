@@ -4,6 +4,7 @@ try{
     window.$ = window.jQuery = require('jquery');
     require('bootstrap');
     require('admin-lte');
+    require('admin-lte/plugins/overlayScrollbars/js/OverlayScrollbars')
 } catch(e){
     console.log(e)
 }
@@ -33,5 +34,5 @@ let baseUrl = document.head.querySelector('meta[name="base-url"]')
 if(baseUrl){
     window.BASE_URL = baseUrl.content
 } else {
-    console.warning('Base url is not setup.');
+    console.error('Base url is not setup.');
 }

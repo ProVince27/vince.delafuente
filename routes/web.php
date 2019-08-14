@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('app.welcome');
-});
+// Route::get('/', function () {
+//     return view('app.welcome');
+// });
 
 Route::get('/base','Controller@index');
+Route::get('/content','Dashboard\DashboardController@index');
