@@ -1,9 +1,9 @@
 <template>
     <div class="card-header">
-        <template v-show="title">
+        <template v-if="title">
             <h3 class="card-title" v-html="title"></h3>
         </template>
-        <slot></slot>
+        <slot v-else></slot>
         <!-- <slot name="card-tools"></slot> -->
     </div>
 </template>
