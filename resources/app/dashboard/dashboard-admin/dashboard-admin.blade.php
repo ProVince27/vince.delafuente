@@ -5,24 +5,12 @@
 
 @template(['id' => 'dashboard-admin'])
 <div>
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Blank Page</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Blank Page</li>
-                    </ol>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
+    <content-header>
+        <content-title title="Dashboard" icon="fas fa-tachometer-alt" />
+    </content-header>
 
-    <div class="container-fluid">
-        <div class="row">
+    <content-body>
+        <row>
             <div class="col-md-6">
                 <card>
                     <card-header title="Testing" />
@@ -30,9 +18,19 @@
                     <card-footer>This is footer</card-footer>
                 </card>
             </div>
-        </div>
-    </div>
-    
+            <div class="col-md-3">
+                <info-box>
+                    <info-box-icon class="bg-info elevation-1" icon="fas fa-cog" />
+                    <info-box-content>
+                        <span class="info-box-text">CPU Traffic</span>
+                        <span class="info-box-number">
+                            10
+                        </span>
+                    </info-box-content>
+                </info-box>
+            </div>
+        </row>
+    </content-body>
 </div>
 @endtemplate
 @endsection

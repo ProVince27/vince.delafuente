@@ -11,9 +11,7 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('app.welcome');
-// });
+
 Route::get('/base','Controller@index')->name('parent');
 Route::get('/child','Controller@index')->name('child1');
 Route::get('/child2','Controller@index')->name('child2');
