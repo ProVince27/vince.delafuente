@@ -1,9 +1,10 @@
 <template>
-    <section class="content-header">
-        <div class="container-fluid">
+    <div class="content-header">
+        <!-- <div class="container-fluid"> -->
+        <div class="">
             <slot></slot>
         </div>
-    </section>
+    </div>
 </template>
 
 <script>

@@ -6,15 +6,18 @@
 @template(['id' => 'dashboard-admin'])
 <div>
     <content-header>
-        <content-title title="Dashboard" icon="fas fa-tachometer-alt" />
+        <content-title title="Dashboard" />
     </content-header>
 
     <content-body>
         <row>
             <div class="col-md-6">
                 <card>
-                    <card-header title="Testing" />
-                    <card-body>Tis is a content</card-body>
+                    <card-header title="Card" />
+                    <card-body>
+                        <p>Tis is a content</p>
+                        <bs-button>Click</bs-button>
+                    </card-body>
                     <card-footer>This is footer</card-footer>
                 </card>
             </div>
