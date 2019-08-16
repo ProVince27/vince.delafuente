@@ -13,6 +13,7 @@
         <row>
             <div class="col-md-6">
                 <card>
+                    
                     <card-header title="Card" />
                     <card-body>
                         <p>Tis is a content</p>
