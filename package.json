@@ -14,6 +14,7 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.10.1",
+        "admin-lte": "^3.0.0-beta.2",
         "axios": "^0.18",
         "babel-plugin-module-resolver": "^3.2.0",
         "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -32,7 +33,6 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.21",
-        "admin-lte": "^3.0.0-beta.2",
         "laravel-mix-versionhash": "^1.0.7"
     }
 }

@@ -19,10 +19,13 @@
     {{-- End-Content-Wrapper-Page --}}
 
     {{-- Right-Sidebar --}}
-        <aside class="control-sidebar control-sidebar-light" >
+        <aside class="control-sidebar control-sidebar-light position-fixed" >
             <div class="p-3">
-            <h5>Title</h5>
-            <p>Sidebar content</p>
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+            <div class="control-sidebar-content">
+                
             </div>
         </aside>
     {{-- End-Right-Sidebar --}}
