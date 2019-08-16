@@ -31,4 +31,4 @@ mix.extract([
     'lodash'
 ])
 // .versionHash()
-mix.disableNotifications()
+// mix.disableNotifications()
