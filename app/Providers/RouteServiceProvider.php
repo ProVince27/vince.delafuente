@@ -38,7 +38,10 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
-
+        
+        // if(!in_console()){
+            $this->mapWebTestRoutes();
+        // }
         //
     }
 
@@ -69,5 +72,12 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapWebTestRoutes(){
+        Route::prefix('dev')
+            ->middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.test.php'));
     }
 }

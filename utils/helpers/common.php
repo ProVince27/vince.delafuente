@@ -19,13 +19,13 @@ if (!function_exists('words_limit')) {
     }
 }
 
-if (!function_exists('production')):
+if (!function_exists('dev_mode')):
     function dev_mode() {
         return App::environment() == 'local';
     }
 endif;
 
-if (!function_exists('inConsole')):
+if (!function_exists('in_console')):
     function in_console() {
         return app()->runningInConsole();
     }

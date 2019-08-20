@@ -33,4 +33,18 @@ return [
             ],
         ],
     ],
+    [
+        'class'       => MasterSidebar::class,
+        'title'       => 'Dev',
+        'route'       => '#',
+        'icon'        => 'fab fa-dev',
+        'items'       => [
+            [
+                'class' => MasterSidebar::class,
+                'title' => 'Google Map',
+                'icon'  => 'fas fa-map-marked-alt',
+                'route' => 'dev.google-map',
+            ]
+        ],
+    ]
 ];
