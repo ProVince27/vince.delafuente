@@ -34,6 +34,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.21",
         "driver.js": "^0.9.7",
+        "google-maps-api-loader": "^1.1.1",
         "laravel-mix-versionhash": "^1.0.7",
         "sweetalert2": "^8.15.3"
     }

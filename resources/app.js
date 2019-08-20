@@ -8,6 +8,7 @@ Object.keys(Components)
 
 import './app/dashboard/dashboard'
 
+import './app/dev/google-service'
 
 // initialize parent component
 const app = new Vue({
