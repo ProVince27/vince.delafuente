@@ -16,10 +16,11 @@
     <content-body>
         <div class="container">
             <row>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12">
                     <google-map 
                         style="height:375px;"
-                        @addMarker="addMarker"
+                        @pinned="addMarker"
+                        
                     >
                         <template slot-scope="{ google, map }">
                             <google-marker
@@ -30,7 +31,19 @@
                                 :google="google"
                                 :map="map"
                                 :is-draggable.boolean="true"
-                            />
+                                :radius="10000"
+                                @dragend="handleDragend(key,...arguments)"
+                            >
+                                <template slot-scope="{pin,google}">
+                                    {{-- <google-marker-info-window 
+                                        :marker="pin"
+                                        :google="google"
+                                        :content="'<div><h3>Hello</h3><p>hello</p></div>'"
+                                    >
+                                        
+                                    </google-marker-info-window> --}}
+                                </template>
+                            </google-marker>
                         </template>
                     </google-map>
                 </div>

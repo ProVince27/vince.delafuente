@@ -7,12 +7,16 @@ export default {
     data:()=>({markers:COORDINATES}),
     components: addComponents(
         require('./__includes/google-map/google-map').default,
-        require('./__includes/google-map/google-marker').default
+        require('./__includes/google-map/google-marker').default,
+        require('./__includes/google-map/google-marker-info-window').default
     ),
     methods:{
         addMarker(e) {
             const {lat,lng} = e.latLng
             this.markers.push({lat:lat(),lng:lng()})
+        },
+        handleDragend(key,e){
+            this.markers[key] = { lat:e.lat(),lng:e.lng()}
         }
     }
 }

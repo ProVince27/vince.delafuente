@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="google-map" :ref="container" @click="addMarker"></div>
+        <div class="google-map" :ref="container"></div>
         <template v-if="Boolean(this.google) && Boolean(this.map)">
             <slot :google="google" :map="map" />
         </template>
@@ -38,19 +38,16 @@ export default {
             this.map = new this.google.maps.Map(
                 mapContainer,this.mapConfig
             )
+            this.addMarker()
         },
         addMarker(){
             const vm = this
-            this.google.maps.event.addListener(this.map, 'dblclick', (e) => {
+            new this.google.maps.event.addListener(this.map, 'click', (e) => {
                 vm.placeMarker(e);
             });
         },
         placeMarker(position){
-            this.$emit("addMarker",position)
-            // const marker = new this.google.maps.Marker({
-            //     position, 
-            //     map: this.map
-            // });
+            this.$emit("pinned",position)
         }
     },
     computed:{
