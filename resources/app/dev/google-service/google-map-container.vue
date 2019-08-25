@@ -8,7 +8,8 @@ export default {
     components: addComponents(
         require('./__includes/google-map/google-map').default,
         require('./__includes/google-map/google-marker').default,
-        require('./__includes/google-map/google-marker-info-window').default
+        require('./__includes/google-map/google-marker-info-window').default,
+        require('./__includes/google-map/google-circle').default
     ),
     methods:{
         addMarker(e) {

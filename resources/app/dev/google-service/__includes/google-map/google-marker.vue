@@ -54,8 +54,8 @@ export default {
         onDragend({latLng,...args}) {
             this.$emit('dragend',latLng)
         },
-        onClickMarker(){
-            // this.$children[0].infoWindow.open(this.map,this.pin)
+        onClickMarker() {
+          this.getInfoWindow().infoWindow.open(this.map,this.pin)
         },
         hasCircle(){
             if(!this.radius) return;
@@ -68,13 +68,16 @@ export default {
                 map:this.map
             })
             this.circle.bindTo("center", this.pin, "position");
+        },
+        getInfoWindow(){
+            let infoWindows = this.$children.filter(component => {
+                if(component.constructor.options.name === 'google-marker-info-window') return component
+            })
+            return  _.first(infoWindows)
         }
     },
     created(){
         this.setMarker()
-    },
-    mounted(){
-        
     }
 }
 </script>

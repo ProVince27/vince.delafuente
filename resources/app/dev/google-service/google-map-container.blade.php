@@ -23,6 +23,14 @@
                         
                     >
                         <template slot-scope="{ google, map }">
+                            {{-- <google-circle
+                                v-for="(marker,key) in markers"
+                                :key="key"
+                                :map="map"
+                                :radius=
+                                :google="google"
+                                :center="{center:{lat:marker.lat,lng:marker.lng}}"
+                            ></google-circle> --}}
                             <google-marker
                                 v-for="(marker,key) in markers"
                                 :key="key"
@@ -31,17 +39,24 @@
                                 :google="google"
                                 :map="map"
                                 :is-draggable.boolean="true"
-                                :radius="10000"
+                                {{-- :radius="10000" --}}
                                 @dragend="handleDragend(key,...arguments)"
                             >
                                 <template slot-scope="{pin,google}">
-                                    {{-- <google-marker-info-window 
+                                        <google-circle
+                                            :radius="10000"
+                                            :google="google"
+                                            :map="map"                                        
+                                            :marker="pin"
+                                        ></google-circle>
+                                    <google-marker-info-window 
                                         :marker="pin"
                                         :google="google"
+                                        :map="map"
                                         :content="'<div><h3>Hello</h3><p>hello</p></div>'"
                                     >
                                         
-                                    </google-marker-info-window> --}}
+                                    </google-marker-info-window>
                                 </template>
                             </google-marker>
                         </template>
