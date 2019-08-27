@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <slot></slot>
-    </div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 <script>
-import {INFOWINDOW} from './google-map-settings'
+import { INFOWINDOW } from './google-map-settings'
 import { mapMixins } from './google-mixins'
 export default {
     name:'google-marker-info-window',
@@ -17,11 +17,18 @@ export default {
         content:null
     },
     data:()=>({
-        infoWindow:null
+        infoWindow:null,
+        detail:null
     }),
+    methods:{
+        getContent(){
+            const content = $(this.$el).find('.info-window-content').first()//.removeClass('d-none')
+            return content.html()
+        }
+    },
     mounted(){
         const { InfoWindow } = this.google.maps
-        this.infoWindow = new InfoWindow({content: this.content||INFOWINDOW})
+        this.infoWindow = new InfoWindow({content: this.getContent() ||INFOWINDOW})
     }        
 }
 </script>

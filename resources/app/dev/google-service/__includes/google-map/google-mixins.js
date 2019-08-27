@@ -1,3 +1,5 @@
+import GoogleMapsApiLoader from 'google-maps-api-loader'
+
 const mapMixins = {
     props: {
         google: {
@@ -11,10 +13,21 @@ const mapMixins = {
     }
 }
 
+const googleMap = {
+    methods:{
+        async _initGoogleMap(key = null){
+            const googleMapApi = await GoogleMapsApiLoader({
+                apiKey: key || process.env.MIX_GOOGLE_MAP_API_KEY
+            })
+            return googleMapApi
+        }
+    }
+}
+
 export default {
     mapMixins
 }
 
 export {
-    mapMixins
+    mapMixins,googleMap
 }

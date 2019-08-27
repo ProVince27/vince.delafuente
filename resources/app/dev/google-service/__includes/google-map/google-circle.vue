@@ -40,8 +40,7 @@ export default {
                     lat:lat(),
                     lng:lng()
                 }
-            }
-            
+            }      
             const { Circle } = this.google.maps
             const center = this.position || this.center || {
                     lat:this.lat,

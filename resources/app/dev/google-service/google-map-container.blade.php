@@ -17,10 +17,12 @@
         <div class="container">
             <row>
                 <div class="col-lg-6 col-sm-12">
-                    <google-map 
+                    {{-- <form-input
+                        v-model="googleSearch"
+                    /> --}}
+                    <google-map
                         style="height:375px;"
                         @pinned="addMarker"
-                        
                     >
                         <template slot-scope="{ google, map }">
                             {{-- <google-circle
@@ -46,17 +48,20 @@
                                         <google-circle
                                             :radius="10000"
                                             :google="google"
-                                            :map="map"                                        
+                                            :map="map"                                      
                                             :marker="pin"
-                                        ></google-circle>
-                                    <google-marker-info-window 
-                                        :marker="pin"
-                                        :google="google"
-                                        :map="map"
-                                        :content="'<div><h3>Hello</h3><p>hello</p></div>'"
-                                    >
-                                        
-                                    </google-marker-info-window>
+                                        />
+                                        <google-marker-info-window 
+                                            :marker="pin"
+                                            :google="google"
+                                            :map="map"
+                                            {{-- :content="'<div><h3>Hello</h3><p>hello</p></div>'" --}}
+                                        >
+                                            <div class="info-window-content d-none" >
+                                                <h4>Test sample</h4>
+                                                <p>test ing example</p>
+                                            </div>
+                                        </google-marker-info-window>
                                 </template>
                             </google-marker>
                         </template>

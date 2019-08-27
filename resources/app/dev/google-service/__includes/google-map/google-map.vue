@@ -9,8 +9,11 @@
 <script>
 import GoogleMapsApiLoader from 'google-maps-api-loader'
 import {COORDINATES} from './google-map-settings'
+import { googleMap } from './google-mixins'
+
 export default {
     name:'google-map',
+    mixins:[googleMap],
     props:{
         mapConfig:{
             type:Object,
@@ -56,10 +59,7 @@ export default {
         }
     },
     async mounted(){
-        const googleMapApi = await GoogleMapsApiLoader({
-            apiKey: this.apiKey || process.env.MIX_GOOGLE_MAP_API_KEY
-        })
-        this.google = googleMapApi
+        this.google = await this._initGoogleMap(this.apiKey || process.env.MIX_GOOGLE_MAP_API_KEY)
         this.initialize()
     }
 }
