@@ -29,6 +29,10 @@ export default {
             type:String,
             required:false,
             default:null
+        },
+        initGoogle:{
+            required:true,
+            default:null
         }
     },
     data: () => ({
@@ -41,6 +45,7 @@ export default {
             this.map = new this.google.maps.Map(
                 mapContainer,this.mapConfig
             )
+            this.$emit('getMap',this.map)
             this.addMarker()
         },
         addMarker(){
@@ -51,15 +56,17 @@ export default {
         },
         placeMarker(position){
             this.$emit("pinned",position)
-        }
+        },
     },
     computed:{
         container(){
             return `google-map-${this._uid}`
         }
     },
-    async mounted(){
-        this.google = await this._initGoogleMap(this.apiKey || process.env.MIX_GOOGLE_MAP_API_KEY)
+    async mounted() {
+        
+        this.google = await this.initGoogle
+        //  || await this._initGoogleService(this.apiKey || process.env.MIX_GOOGLE_MAP_API_KEY)
         this.initialize()
     }
 }

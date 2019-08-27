@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot></slot>
+    <slot :marker="marker" ></slot>
   </div>
 </template>
 <script>
@@ -23,12 +23,13 @@ export default {
     methods:{
         getContent(){
             const content = $(this.$el).find('.info-window-content').first()//.removeClass('d-none')
+            if(!content) return
             return content.html()
         }
     },
     mounted(){
         const { InfoWindow } = this.google.maps
         this.infoWindow = new InfoWindow({content: this.getContent() ||INFOWINDOW})
-    }        
+    }
 }
 </script>

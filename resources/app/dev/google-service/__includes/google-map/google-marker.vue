@@ -5,10 +5,10 @@
 </template>
 <script>
 import { INFOWINDOW,RADIUS_STYLE } from './google-map-settings'
-import { mapMixins } from './google-mixins'
+import { mapMixins,googleUtils } from './google-mixins'
 export default {
     name:'google-marker',
-    mixins:[mapMixins],
+    mixins:[mapMixins,googleUtils],
     props: {
         marker: {
             type: Object,
@@ -32,6 +32,7 @@ export default {
     }),
     methods:{
         setMarker(){
+            this._getParentComponent(this)
             const vm = this
             const { Marker, InfoWindow, } = this.google.maps
             const {lat,lng} = this.marker
@@ -73,7 +74,7 @@ export default {
             let infoWindows = this.$children.filter(component => {
                 if(component.constructor.options.name === 'google-marker-info-window') return component
             })
-            return  _.first(infoWindows)
+            return  infoWindows[0]
         }
     },
     created(){

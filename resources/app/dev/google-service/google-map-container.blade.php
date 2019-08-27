@@ -17,12 +17,17 @@
         <div class="container">
             <row>
                 <div class="col-lg-6 col-sm-12">
-                    {{-- <form-input
-                        v-model="googleSearch"
-                    /> --}}
+                    <google-map-autocomplete
+                        :google="initGoogle"
+                        :map="map"
+                        @placeChanged="getPlaceChanged"
+                    />
+                    
                     <google-map
+                        :init-google="initGoogle"
                         style="height:375px;"
                         @pinned="addMarker"
+                        @getMap="setMap"
                     >
                         <template slot-scope="{ google, map }">
                             {{-- <google-circle
@@ -54,11 +59,10 @@
                                         <google-marker-info-window 
                                             :marker="pin"
                                             :google="google"
-                                            :map="map"
-                                            {{-- :content="'<div><h3>Hello</h3><p>hello</p></div>'" --}}
+                                            :map="map"                                   
                                         >
                                             <div class="info-window-content d-none" >
-                                                <h4>Test sample</h4>
+                                                <h4>Test test sample</h4>
                                                 <p>test ing example</p>
                                             </div>
                                         </google-marker-info-window>
