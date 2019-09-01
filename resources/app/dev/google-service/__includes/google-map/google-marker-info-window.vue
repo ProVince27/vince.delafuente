@@ -1,35 +1,42 @@
 <template>
   <div>
-    <slot :marker="marker" ></slot>
+    <slot class="info-window-content d-none" :pin="pin" :test="test"></slot>
   </div>
 </template>
 <script>
 import { INFOWINDOW } from './google-map-settings'
-import { mapMixins } from './google-mixins'
 export default {
     name:'google-marker-info-window',
-    mixins:[mapMixins],
+    inject:['marker'],
     props:{
-        marker:{
-            type: Object,
-            required: true
-        },
-        content:null
+       content:null
     },
     data:()=>({
         infoWindow:null,
-        detail:null
+        detail:null,
+        pin:null,
+        test:"ano na"
+
     }),
-    methods:{
+    computed:{
         getContent(){
-            const content = $(this.$el).find('.info-window-content').first()//.removeClass('d-none')
-            if(!content) return
+            const content = $(this.$el)
+            if(!content) return null
             return content.html()
         }
     },
+    created(){
+        const { InfoWindow } = google.maps
+        this.infoWindow = new InfoWindow({content: this.getContent})
+        const vm = this
+        this.marker.then((marker)=>{
+            console.log('ano ito',marker.position.lat())
+            vm.pin = marker
+        })
+    },
     mounted(){
-        const { InfoWindow } = this.google.maps
-        this.infoWindow = new InfoWindow({content: this.getContent() ||INFOWINDOW})
+        console.log(this.pin)
+        
     }
 }
 </script>

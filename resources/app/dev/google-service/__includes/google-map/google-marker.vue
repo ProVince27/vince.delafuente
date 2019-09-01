@@ -1,16 +1,36 @@
-<template>
-    <div>
-        <slot :pin="pin" :google="google" />
-    </div>
-</template>
 <script>
 import { INFOWINDOW,RADIUS_STYLE } from './google-map-settings'
-import { mapMixins,googleUtils } from './google-mixins'
+
+const bindGoogleMap = (vm) => {
+    if(typeof vm !== 'object' && typeof vm.$gmap === 'function') throw new error('required keys is not present!')
+    let a = null
+    // return vm.$gmap((map)=>{
+    //     return {
+    //         get: () => map
+    //     }
+    // })
+}
+
 export default {
+    template:'<div><slot/></div>',
     name:'google-marker',
-    mixins:[mapMixins,googleUtils],
+    inject:{
+        'gmap':{
+            default:null
+        },
+        'cluster':{
+              default:null
+        }
+    },
+    provide(){
+        return {
+           'marker': new Promise((resolve, reject) => {
+                this.$markerPromiseDeferred = { resolve, reject }
+            })
+        }
+    },
     props: {
-        marker: {
+        position: {
             type: Object,
             required: true
         },
@@ -25,50 +45,45 @@ export default {
             default:0
         }
     },
+    beforeCreate(options){
+        this.gmap = this.cluster || this.gmap 
+        return this.gmap
+    },
     data:()=>({
         pin:null,
         circle:null,
-        center:null
+        center:null,
     }),
     methods:{
-        setMarker(){
-            this._getParentComponent(this)
+        setMarker(map){
             const vm = this
-            const { Marker, InfoWindow, } = this.google.maps
-            const {lat,lng} = this.marker
+            const { Marker } = window.google.maps
+            const {lat,lng} = this.position
             this.pin = new Marker({
                 position: {
                     lat,lng
                 },
-                marker: this.marker,
-                map: this.map,
+                map,
                 title:this.title,
                 draggable:this.isDraggable
                 // icon: POINT_MARKER_ICON_CONFIG
             })
-            this.google.maps.event.addListener(this.pin,'dragend',(args)=>
+             this.$markerPromiseDeferred.resolve(this.pin)
+            
+            // console.log(vm._map)
+            window.google.maps.event.addListener(this.pin,'dragend',(args)=>
                 vm.onDragend(args)
             )
-            this.pin.addListener('click',()=>vm.onClickMarker())
-            this.hasCircle()
+            this.pin.addListener('click',()=>vm.onClickMarker(map))
         },
         onDragend({latLng,...args}) {
             this.$emit('dragend',latLng)
         },
-        onClickMarker() {
-          this.getInfoWindow().infoWindow.open(this.map,this.pin)
-        },
-        hasCircle(){
-            if(!this.radius) return;
-            const { Circle } = this.google.maps
-            const {lat,lng} = this.marker 
-            this.circle = new Circle({
-                ...RADIUS_STYLE,
-                radius:this.radius,
-                center:{lat,lng},
-                map:this.map
-            })
-            this.circle.bindTo("center", this.pin, "position");
+        onClickMarker(map) {
+            const marker = this.getInfoWindow()
+            if(marker){
+                marker.infoWindow.open(this.map,this.pin)
+            }
         },
         getInfoWindow(){
             let infoWindows = this.$children.filter(component => {
@@ -77,8 +92,11 @@ export default {
             return  infoWindows[0]
         }
     },
-    created(){
-        this.setMarker()
+    mounted(){
+        const vm = this
+        this.gmap.then((map)=>{
+            vm.setMarker(map)
+        })
     }
 }
 </script>

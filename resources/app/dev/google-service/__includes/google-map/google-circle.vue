@@ -1,15 +1,18 @@
 <template></template>
 <script>
-import { mapMixins } from './google-mixins'
+// import { mapMixins } from './google-mixins'
 import { RADIUS_STYLE } from './google-map-settings'
 export default {
     name:'google-circle',
-    mixins:[mapMixins],
-    props:{
+    inject:{
         marker:{
-            type:Object,
-            required:false
+            default:null,
         },
+        map:{
+            default:null,
+        }
+    },
+    props:{
         radius:{
             type:Number,
             require:true
@@ -33,33 +36,33 @@ export default {
         position:null,
     }),
     methods:{
-        initCircle(){
-            if(this.marker){
-                const { lat,lng } = this.marker.position
+        initCircle(marker){
+            if(marker){
+                const { lat,lng } = marker.position
                 this.position = {
                     lat:lat(),
                     lng:lng()
                 }
-            }      
-            const { Circle } = this.google.maps
-            const center = this.position || this.center || {
-                    lat:this.lat,
-                    lng:this.lng
-                }
+            }
+            const { Circle } = window.google.maps
+            const center = this.position
             this.circle = new Circle({
                 ...this.styling,
                 radius:this.radius,
                 center,
-                map:this.map
+                map:marker.map
             })
 
-            if(this.marker){
-                  this.circle.bindTo("center", this.marker, "position");
+            if(marker){
+                this.circle.bindTo("center", marker, "position");
             }
         }
     },
     mounted(){
-        this.initCircle()
+        const vm = this
+        this.marker.then((marker)=>{
+            vm.initCircle(marker)
+        })
     }
 }
 </script>
