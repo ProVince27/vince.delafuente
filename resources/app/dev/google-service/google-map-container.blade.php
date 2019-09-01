@@ -17,14 +17,9 @@
         <div class="container">
             <row>
                 <div class="col-lg-6 col-sm-12">
-                    {{-- <google-map-autocomplete
-                        @placeChanged="getPlaceChanged"
-                    /> --}}
-                    
                     <google-map
                         style="height:375px;"    
                     >
-                        
                         <google-marker
                             v-for="(marker,key) in markers"
                             :key="key"
