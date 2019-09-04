@@ -1,102 +1,108 @@
 <script>
 import { INFOWINDOW,RADIUS_STYLE } from './google-map-settings'
 
-const bindGoogleMap = (vm) => {
-    if(typeof vm !== 'object' && typeof vm.$gmap === 'function') throw new error('required keys is not present!')
-    let a = null
-    // return vm.$gmap((map)=>{
-    //     return {
-    //         get: () => map
-    //     }
-    // })
-}
-
 export default {
     template:'<div><slot/></div>',
     name:'google-marker',
     inject:{
         'gmap':{
             default:null
-        },
-        'cluster':{
-              default:null
         }
     },
     provide(){
+        this.$marker = new Promise((resolve, reject) => {
+            this.$markerPromiseDeferred = { resolve, reject }
+        })
         return {
-           'marker': new Promise((resolve, reject) => {
-                this.$markerPromiseDeferred = { resolve, reject }
-            })
+           'marker': this.$marker
         }
     },
     props: {
-        position: {
-            type: Object,
-            required: true
-        },
         title:null,
-        isDraggable:{
+        lat:{
+            type:Number,
+            default:0
+        },
+        lng:{
+            type:Number,
+            default:0
+        },
+        draggable:{
             type:Boolean,
             default:false
-        },
-        radius:{
-            type:Number,
-            required:false,
-            default:0
         }
     },
-    beforeCreate(options){
-        this.gmap = this.cluster || this.gmap 
-        return this.gmap
+    data(){
+        return {
+            pin:null,
+            circle:null,
+            cluster:null,
+            center:{
+                lat:0,
+                lng:0
+            }
+        }
     },
-    data:()=>({
-        pin:null,
-        circle:null,
-        center:null,
-    }),
     methods:{
-        setMarker(map){
+        addMarker(map){
             const vm = this
-            const { Marker } = window.google.maps
-            const {lat,lng} = this.position
+            map = this._getMap(map)
+            const { Marker } = google.maps
             this.pin = new Marker({
-                position: {
-                    lat,lng
+                position:{
+                    lat:this.lat,
+                    lng:this.lng
                 },
                 map,
                 title:this.title,
-                draggable:this.isDraggable
+                draggable:this.draggable
                 // icon: POINT_MARKER_ICON_CONFIG
             })
-             this.$markerPromiseDeferred.resolve(this.pin)
+            if(this.cluster){
+                this.cluster.addMarker(this.pin)
+            }
+
+            this.$markerPromiseDeferred.resolve(this.pin)
             
-            // console.log(vm._map)
-            window.google.maps.event.addListener(this.pin,'dragend',(args)=>
-                vm.onDragend(args)
-            )
+            google.maps.event.addListener(this.pin,'dragend',(args)=> vm.onDragend(args))
             this.pin.addListener('click',()=>vm.onClickMarker(map))
         },
+        _getMap(i){
+            if(this.$parent.$options._componentTag === 'google-cluster'){
+                this.cluster = i
+                return i.map
+            }
+            return i
+        },
         onDragend({latLng,...args}) {
-            this.$emit('dragend',latLng)
+            this.$emit('dragend',latLng,args)
         },
         onClickMarker(map) {
             const marker = this.getInfoWindow()
-            if(marker){
-                marker.infoWindow.open(this.map,this.pin)
-            }
+            if(marker){ marker.infoWindow.open(this.map,this.pin)}
         },
         getInfoWindow(){
             let infoWindows = this.$children.filter(component => {
                 if(component.constructor.options.name === 'google-marker-info-window') return component
             })
             return  infoWindows[0]
+        },
+        setPinLocation(){
+            if(this.pin){ this.pin.setPosition(this.center)}
         }
     },
-    mounted(){
-        const vm = this
-        this.gmap.then((map)=>{
-            vm.setMarker(map)
-        })
+    created(){
+        this.gmap.then(this.addMarker)
+    },
+    watch:{
+        lat(n,o){
+            this.center.lat = n
+            this.setPinLocation()
+        },
+        lng(n,o){
+            this.center.lng = n
+            this.setPinLocation()
+        }
     }
 }
 </script>

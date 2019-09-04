@@ -2,24 +2,38 @@
     <form-input type="text" ref="google_search" v-model="search" />
 </template>
 <script>
-import {googleMap} from './google-mixins'
+import bus from 'utils/event-bus'
+
 export default {
     name:'google-map-autocomplete',
-    mixins:[googleMap],
+    props:{
+        bindMap:{
+            default:null
+        }
+    },
     data:()=>({
         autocomplete:null,
         search:null,
+        map:null
     }),
-    async mounted(){
-        const google = await this._initGoogleService()
-        // const { map } = await this.$nextTick(this.map)
-        const { Autocomplete } =  google.maps.places
-        const vm = this
-        this.autocomplete = new Autocomplete(this.$refs.google_search.$el)
-        this.autocomplete.bindTo('bounds', map)
-        this.autocomplete.addListener('place_changed',() => {
-            vm.$emit('placeChanged',vm.autocomplete.getPlace())
-        })
+    mounted(){
+        // console.log('map',this.bindMap)
+        this.initSearch()
+    },
+    destroyed(){
+        if(this.bindMap){
+            bus.$off(this.bindMap)
+        }
+    },
+    methods:{
+        initSearch(){
+            const vm = this
+            const { Autocomplete } =  google.maps.places
+            this.autocomplete = new Autocomplete(this.$refs.google_search.$el)
+            this.autocomplete.addListener('place_changed',() => {
+                vm.$emit('placeChanged',vm.autocomplete.getPlace(),this.autocomplete)
+            })
+        }
     }
 }
 </script>

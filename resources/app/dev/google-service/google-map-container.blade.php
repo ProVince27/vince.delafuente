@@ -2,7 +2,8 @@
 @section('title','Google Map')
 
 @push('plugins.js.top')
-<script src="https://maps.googleapis.com/maps/api/js?key={{config('services.google.map.api-key')}}&libraries=places"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config('services.google.map.api-key')}}&libraries=places"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 @endpush
 
 
@@ -17,29 +18,18 @@
         <div class="container">
             <row>
                 <div class="col-lg-6 col-sm-12">
+                    {{-- <bs-button @click="doTest"> test </bs-button> --}}
+                    {{-- <div ref="gmap"></div> --}}
+                    <google-map-autocomplete 
+                        v-model="search"
+                        @placeChanged="changedPlace"
+                    />
                     <google-map
-                        style="height:375px;"    
-                    >
-                        <google-marker
-                            v-for="(marker,key) in markers"
-                            :key="key"
-                            :position="marker"
-                            :is-draggable.boolean="true" 
-                            :title="marker.title"
-                            :radius="10000"
-                            @dragend="handleDragend(key,...arguments)"
-                        >
-                            <google-circle
-                                :radius="10000"
-                            />
-                                <google-marker-info-window>
-                                    <template slot-scope="{pin,test}">
-                                        <h4>Lat</h4>
-                                        <p>test ing example</p>
-                                    </template>
-                                </google-marker-info-window>
-                            </google-marker>
-                    </google-map>
+                        style="height:375px;"
+                        ref="gmap"
+                        :zoom="zoom"
+                        :center="center"
+                    />                    
                 </div>
             </row>
         </div>

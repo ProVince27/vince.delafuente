@@ -26,17 +26,16 @@ export default {
         }
     },
     created(){
-        const { InfoWindow } = google.maps
+      
+    },
+    mounted(){
+         const { InfoWindow } = google.maps
         this.infoWindow = new InfoWindow({content: this.getContent})
         const vm = this
         this.marker.then((marker)=>{
-            console.log('ano ito',marker.position.lat())
+            // console.log('ano ito',marker.position.lat())
             vm.pin = marker
         })
-    },
-    mounted(){
-        console.log(this.pin)
-        
     }
 }
 </script>
