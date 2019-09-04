@@ -4,14 +4,7 @@
 import { RADIUS_STYLE } from './google-map-settings'
 export default {
     name:'google-circle',
-    inject:{
-        marker:{
-            default:null,
-        },
-        map:{
-            default:null,
-        }
-    },
+    inject:['$marker'],
     props:{
         radius:{
             type:Number,
@@ -35,6 +28,9 @@ export default {
         circle:null,
         position:null,
     }),
+    beforeCreate(){
+        // this.$circle = true
+    },
     methods:{
         initCircle(marker){
             if(marker){
@@ -60,7 +56,7 @@ export default {
     },
     mounted(){
         const vm = this
-        this.marker.then((marker)=>{
+        this.$marker.then((marker)=>{
             vm.initCircle(marker)
         })
     }

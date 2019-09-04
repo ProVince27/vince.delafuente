@@ -1,5 +1,6 @@
 <script>
 import { INFOWINDOW,RADIUS_STYLE } from './google-map-settings'
+import { types } from 'util';
 
 export default {
     template:'<div><slot/></div>',
@@ -14,7 +15,7 @@ export default {
             this.$markerPromiseDeferred = { resolve, reject }
         })
         return {
-           'marker': this.$marker
+           '$marker': this.$marker
         }
     },
     props: {
@@ -37,6 +38,7 @@ export default {
             pin:null,
             circle:null,
             cluster:null,
+            polygon:null,
             center:{
                 lat:0,
                 lng:0
@@ -62,14 +64,18 @@ export default {
                 this.cluster.addMarker(this.pin)
             }
 
-            this.$markerPromiseDeferred.resolve(this.pin)
-            
             google.maps.event.addListener(this.pin,'dragend',(args)=> vm.onDragend(args))
             this.pin.addListener('click',()=>vm.onClickMarker(map))
+            this.$markerPromiseDeferred.resolve(this.pin)
         },
         _getMap(i){
-            if(this.$parent.$options._componentTag === 'google-cluster'){
+            /* check if cluster exists */
+            if(this.$parent.$cluster){
                 this.cluster = i
+                return i.map
+            }
+            if(this.$parent.$polygon){
+                this.polygon = i
                 return i.map
             }
             return i

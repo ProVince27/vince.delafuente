@@ -29,7 +29,17 @@
                         ref="gmap"
                         :zoom="zoom"
                         :center="center"
-                    />                    
+                    >
+                        <google-marker
+                            :lat="marker.lat"
+                            :lng="marker.lng"
+                        >
+                            <google-circle :radius="3000" />
+                            <google-marker-info-window>
+                                <p>Pin</p>
+                            </google-marker-info-window>
+                        </google-marker>
+                    </google-map>                    
                 </div>
             </row>
         </div>
