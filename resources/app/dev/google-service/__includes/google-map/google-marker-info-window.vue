@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import { INFOWINDOW } from './google-map-settings'
+
 export default {
     name:'google-marker-info-window',
     inject:['$marker'],

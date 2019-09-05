@@ -11,11 +11,8 @@ export const GoogleGeocodeMixins = {
     methods:{
         _geocode(args){
             return new Promise((resolve,reject) =>{
-                vm._geocoder.geocode(args,(results, status)=>{
-                    // vm._geoResult = status === 'OK' ? results[0]: false
-                    if(status === 'OK'){
-                        resolve(results[0])
-                    }
+                this._geocoder.geocode(args,(results, status)=>{
+                    if(status === 'OK'){ resolve(results[0]) }
                     reject(status)
                 })
             })

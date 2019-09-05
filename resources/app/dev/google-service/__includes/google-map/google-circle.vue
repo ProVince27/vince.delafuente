@@ -28,9 +28,6 @@ export default {
         circle:null,
         position:null,
     }),
-    beforeCreate(){
-        // this.$circle = true
-    },
     methods:{
         initCircle(marker){
             if(marker){

@@ -16,9 +16,6 @@ export default {
         }
     },
     props:{
-        bindMap:{
-            default:null
-        },
         center:{
             default(){
                 return {
@@ -46,7 +43,10 @@ export default {
             }
         )
         this.$mapPromiseDeferred.resolve(this.map)
-        if(this.bindMap){ bus.$emit(this.bindMap,this.map)}
+        this.map.addListener('zoom_changed', function() {
+            console.log(this.map)
+        //   this.$emit('zoom_changed',this.map.getZoom())
+        });
         this.$emit('onLoadMap',this.map)
     },
     watch:{
