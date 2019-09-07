@@ -35,6 +35,7 @@ export default {
     },
     data:() => ({map:null}),
     mounted() {
+        const vm = this
         this.map = new google.maps.Map(
             this.$refs['map'],{
                 zoom:this.zoom,
@@ -44,9 +45,9 @@ export default {
         )
         this.$mapPromiseDeferred.resolve(this.map)
         this.map.addListener('zoom_changed', function() {
-            console.log(this.map)
-        //   this.$emit('zoom_changed',this.map.getZoom())
+            vm.$emit('zoom_changed',vm.map.getZoom())
         });
+        
         this.$emit('onLoadMap',this.map)
     },
     watch:{

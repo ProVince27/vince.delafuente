@@ -7,8 +7,12 @@ import bus from 'utils/event-bus'
 export default {
     name:'google-map-autocomplete',
     props:{
-        bindMap:{
-            default:null
+        countryRestriction:{
+            default:'ph'
+        },
+        types:{
+            type:Array,
+            default:()=>(['geocode'])
         }
     },
     data:()=>({
@@ -17,7 +21,6 @@ export default {
         map:null
     }),
     mounted(){
-        // console.log('map',this.bindMap)
         this.initSearch()
     },
     destroyed(){
@@ -29,7 +32,11 @@ export default {
         initSearch(){
             const vm = this
             const { Autocomplete } =  google.maps.places
-            this.autocomplete = new Autocomplete(this.$refs.google_search.$el)
+            this.autocomplete = new Autocomplete(this.$refs.google_search.$el,{
+                types: this.types,
+                componentRestrictions: { country: this.countryRestriction }
+            })
+            
             this.autocomplete.addListener('place_changed',() => {
                 vm.$emit('placeChanged',vm.autocomplete.getPlace(),this.autocomplete)
             })

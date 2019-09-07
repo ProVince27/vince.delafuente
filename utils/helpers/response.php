@@ -10,8 +10,8 @@ if (!function_exists('resolve_response')):
     }
 endif;
 
-if (!function_exists('rejectResponse')):
-    function rejectResponse($message = null, $data = null, $statusCode = null) {
+if (!function_exists('reject_response')):
+    function reject_response($message = null, $data = null, $statusCode = null) {
         return (new ResponseApiService)->reject($message, $data, $statusCode);
     }
 endif;

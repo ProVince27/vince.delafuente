@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -16,6 +17,13 @@ class AppServiceProvider extends ServiceProvider {
             $this->app['request']->server->set('HTTPS','on');
         }
         
+        Collection::macro('whereLike', function ($key,$value) {
+            return $this->filter(function ($item) use ($key,$value) {
+                if(stripos(data_get($item,$key), $value) !== false){
+                    return $item;
+                }
+            });
+        });
     }
 
     /**

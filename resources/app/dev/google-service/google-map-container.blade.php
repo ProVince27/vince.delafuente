@@ -30,15 +30,19 @@
                         :zoom="zoom"
                         :center="center"
                     >
-                        <google-marker
+                        <google-polygon 
+                            v-if="paths"
+                            :paths="paths"
+                        />
+                        {{-- <google-marker
                             :lat="marker.lat"
                             :lng="marker.lng"
-                        >
-                            <google-circle :radius="3000" />
-                            <google-marker-info-window>
+                        /> --}}
+                            {{-- <google-circle :radius="3000" /> --}}
+                            {{-- <google-marker-info-window>
                                 <p>Pin</p>
-                            </google-marker-info-window>
-                        </google-marker>
+                            </google-marker-info-window> --}}
+                        {{-- </google-marker> --}}
                     </google-map>                    
                 </div>
             </row>

@@ -1,9 +1,7 @@
 <script>
 import { addComponents } from 'utils/bundle'
-import bus from 'utils/event-bus'
-import { COORDINATES } from './__includes/google-map/google-map-settings'
-// import PATHS from './__includes/google-map/coordinates'
 import { GoogleGeocodeMixins } from './__includes/google-map/_utils'
+import {get} from 'utils/network'
 
 export default {
     template:'#google-map-container',
@@ -23,14 +21,14 @@ export default {
             lng: 120.8093657
         },
         zoom:13,
-        // paths:PATHS
+        paths:null
     }),
     components: addComponents(
             require('./__includes/google-map/google-map').default,
-            // require('./__includes/google-map/google-polygon').default,
-            require('./__includes/google-map/google-marker').default,
-            require('./__includes/google-map/google-marker-info-window').default,
-            require('./__includes/google-map/google-circle').default,
+            require('./__includes/google-map/google-polygon').default,
+            // require('./__includes/google-map/google-marker').default,
+            // require('./__includes/google-map/google-marker-info-window').default,
+            // require('./__includes/google-map/google-circle').default,
             require('./__includes/google-map/google-map-autocomplete').default,
             // require('./__includes/google-map/google-cluster').default
     ),
@@ -42,16 +40,25 @@ export default {
             this.markers[key] = { lat:e.lat(),lng:e.lng()}
         },
         changedPlace({geometry,place_id}){
-            // const vm = this
-            this._geocode({'placeId': place_id}).then((r)=>{
-                console.log()
-                const pos = {
-                    lat:r.geometry.location.lat(),
-                    lng:r.geometry.location.lng()
-                }
-                this.center = pos
-                this.marker = pos
-                this.zoom = 15
+            const vm = this
+            this.geocode({'placeId': place_id})
+            .then(d => d)
+            .then(({city,position,state})=>{
+                    
+                get(route('dev.google-kml',{
+                    city,
+                    state
+                })).then(({data}) => {
+                    vm.center = position
+                    vm.zoom = 12
+                    vm.paths =  data.data.map(p =>{
+                         return {
+                             lng:p[0],
+                             lat:p[1]
+                         }
+                    } )
+                })
+
             }).catch((e)=>{
                 console.log(e)
             })
