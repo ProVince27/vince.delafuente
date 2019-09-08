@@ -21,11 +21,13 @@ export default {
             lng: 120.8093657
         },
         zoom:13,
-        paths:null
+        paths:null,
+        heatPoints:null,
     }),
     components: addComponents(
             require('./__includes/google-map/google-map').default,
             require('./__includes/google-map/google-polygon').default,
+            require('./__includes/google-map/google-heat-map').default,
             // require('./__includes/google-map/google-marker').default,
             // require('./__includes/google-map/google-marker-info-window').default,
             // require('./__includes/google-map/google-circle').default,
@@ -45,7 +47,7 @@ export default {
             .then(d => d)
             .then(({city,position,state})=>{
                     
-                get(route('dev.google-kml',{
+                return get(route('dev.google-kml',{
                     city,
                     state
                 })).then(({data}) => {
@@ -57,7 +59,14 @@ export default {
                              lat:p[1]
                          }
                     } )
+                    return vm.paths
+                }).then((points)=>{
+                    // console.log(points)
+                    vm.heatPoints =  points.map((lat,lng)=>{
+                        return new google.maps.LatLng(lat, lng)
+                    })
                 })
+                
 
             }).catch((e)=>{
                 console.log(e)

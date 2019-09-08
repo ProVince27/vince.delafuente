@@ -2,7 +2,7 @@
 @section('title','Google Map')
 
 @push('plugins.js.top')
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config('services.google.map.api-key')}}&libraries=places"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{config('services.google.map.api-key')}}&libraries=places,visualization"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 @endpush
 
@@ -30,10 +30,14 @@
                         :zoom="zoom"
                         :center="center"
                     >
-                        <google-polygon 
+                        <google-heat-map 
+                            v-if="heatPoints"
+                            :points="heatPoints"
+                        />
+                        {{-- <google-polygon 
                             v-if="paths"
                             :paths="paths"
-                        />
+                        /> --}}
                         {{-- <google-marker
                             :lat="marker.lat"
                             :lng="marker.lng"
