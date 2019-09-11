@@ -23,6 +23,7 @@ export default {
         zoom:13,
         paths:null,
         heatPoints:null,
+        isLoading:false,
     }),
     components: addComponents(
             require('./__includes/google-map/google-map').default,
@@ -43,6 +44,7 @@ export default {
         },
         changedPlace({geometry,place_id}){
             const vm = this
+            vm.isLoading = true;
             this.geocode({'placeId': place_id})
             .then(d => d)
             .then(({city,position,state})=>{
@@ -65,10 +67,12 @@ export default {
                     vm.heatPoints =  points.map((lat,lng)=>{
                         return new google.maps.LatLng(lat, lng)
                     })
+                    vm.isLoading = false;
                 })
                 
 
             }).catch((e)=>{
+                vm.isLoading = false;
                 console.log(e)
             })
         },

@@ -47,6 +47,7 @@ export default {
     },
     watch:{
         points(n){
+            // console.log(n)
             this.heatMap.set('data',n)
         }
     }
