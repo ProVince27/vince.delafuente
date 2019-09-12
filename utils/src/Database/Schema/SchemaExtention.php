@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Schema;
  *
  * @package Icg\Database\Schema
  */
-class Blueprint {
+class SchemaExtention {
     /**
      * Add created_by,updated_by,deleted_by and also timestamps
      *

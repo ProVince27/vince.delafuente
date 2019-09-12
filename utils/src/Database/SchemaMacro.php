@@ -2,19 +2,17 @@
 
 namespace Icg\Database;
 
-use DB;
-use Icg\Database\Schema\Blueprint;
+use Icg\Database\Schema\SchemaExtention;
+use Illuminate\Support\Facades\Facade;
 
-class SchemaMacro {
+class SchemaMacro extends Facade {
 
-    public static function build() {
-        $schema = DB::getSchemaBuilder();
-
-        $schema->blueprintResolver(function ($table, $callback) {
-            return new Blueprint($table, $callback);
-        });
-        
-        return $schema;
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor() {
+        return SchemaExtention::class;
     }
-
 }
