@@ -1,9 +1,8 @@
 <?php
 
-namespace Icg\User\Facades;
+namespace Icg\Database\Field;
 
 use Illuminate\Support\Facades\Facade;
-use Icg\User\Helpers\LoginField as LoginFieldClass;
 
 class LoginField extends Facade {
 
@@ -13,6 +12,6 @@ class LoginField extends Facade {
      * @return string
      */
     protected static function getFacadeAccessor() {
-        return LoginFieldClass::class;
+        return MatchField::class;
     }
 }
