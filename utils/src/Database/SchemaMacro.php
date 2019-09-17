@@ -15,4 +15,5 @@ class SchemaMacro extends Facade {
     protected static function getFacadeAccessor() {
         return SchemaExtention::class;
     }
+
 }

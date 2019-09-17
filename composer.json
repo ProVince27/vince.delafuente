@@ -21,6 +21,7 @@
         "maatwebsite/excel": "^3.1",
         "predis/predis": "^1.1",
         "sanpakyou027/laravel-sidebar": "^2.2",
+        "santigarcor/laratrust": "^5.2",
         "tightenco/ziggy": "^0.7.1"
     },
     "require-dev": {

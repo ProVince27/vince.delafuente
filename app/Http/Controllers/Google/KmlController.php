@@ -18,6 +18,8 @@ class KmlController extends Controller {
     
     public function index(Request $request) {
         
+        
+
         $value = Cache::store('redis')->rememberForever('philippine_cities',function () {
             $geoloc = File::get(storage_path('app\\google\\philippine-city.json'));
             return collect(json_decode($geoloc,true)['features']);

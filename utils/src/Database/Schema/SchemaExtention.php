@@ -29,7 +29,7 @@ class SchemaExtention {
                     $this->timestamp($field, 0)->nullable();
                 }
             }
-
+            
             foreach ($user as $field) {
                 if (!Schema::hasColumn($this->getTable(), $field)) {
                     $this->unsignedInteger($field)->nullable();
