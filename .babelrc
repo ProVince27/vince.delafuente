@@ -8,7 +8,8 @@
              "config": "./resources/config",
              "mixins": "./resources/shared/mixins",
              "utils": "./resources/shared/utils",
-             "components": "./resources/shared/vue/components"
+             "components": "./resources/shared/vue/components",
+             "store": "./resources/shared/vue/store"
           }
        }]
     ]

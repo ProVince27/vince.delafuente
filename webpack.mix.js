@@ -28,7 +28,9 @@ mix.extract([
     'jquery',
     'admin-lte',
     'vue',
-    'lodash'
+    'lodash',
+    'laravel-file-manager',
+    'vuex'
 ])
 // .versionHash()
  mix.disableNotifications()

@@ -2,8 +2,6 @@
     <form-input type="text" ref="google_search" v-model="search" />
 </template>
 <script>
-import bus from 'utils/event-bus'
-
 export default {
     name:'google-map-autocomplete',
     props:{
@@ -22,11 +20,6 @@ export default {
     }),
     mounted(){
         this.initSearch()
-    },
-    destroyed(){
-        if(this.bindMap){
-            bus.$off(this.bindMap)
-        }
     },
     methods:{
         initSearch(){

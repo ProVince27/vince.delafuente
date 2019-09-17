@@ -1,27 +1,33 @@
 require('./bootstrap');
 
-window.Vue = require('vue')
-import * as VueGoogleMaps from 'vue2-google-maps'
+// window.Vue = require('vue')
+// window.Vuex = require('vuex')
+// import Vuex from 'vuex'
+import Vue from 'vue'
+import Vuex from 'vuex'
 
 import * as Components from './shared/vue/components/index-components'
+
+import FileManager from 'laravel-file-manager'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store();
+
 
 Object.keys(Components)
    .forEach(key => Vue.component(Components[key].name, Components[key]))
 
+// console.log(store)
 
-import './app/dashboard/dashboard'
+Vue.use(FileManager,{store})
 
-import './app/dev/google-service'
 
-// console.log('proce',process.env.MIX_GOOGLE_MAP_API_KEY)
+// import './app/dashboard/dashboard'
 
-// Vue.use(VueGoogleMaps, {
-//     load: {
-//         key:process.env.MIX_GOOGLE_MAP_API_KEY,
-//         libraries:'places'
-//     },
-//     installComponents:false
-// })
+// import './app/dev/google-service'
+
+import './app/media/media'
 
 // initialize parent component
 const app = new Vue({

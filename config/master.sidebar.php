@@ -44,6 +44,12 @@ return [
                 'title' => 'Google Map',
                 'icon'  => 'fas fa-map-marked-alt',
                 'route' => 'dev.google-map',
+            ],
+            [
+                'class' => MasterSidebar::class,
+                'title' => 'Media',
+                'icon'  => 'fas fa-photo-video',
+                'route' => 'dev.media-manager',
             ]
         ],
     ]
