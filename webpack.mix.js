@@ -29,7 +29,6 @@ mix.extract([
     'admin-lte',
     'vue',
     'lodash',
-    'laravel-file-manager',
     'vuex'
 ])
 // .versionHash()

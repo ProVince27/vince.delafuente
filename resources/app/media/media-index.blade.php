@@ -9,7 +9,7 @@
             <content-title title="Media Manager" />
         </content-header>
         <content-body>
-            <file-manager></file-manager>
+            
         </content-body>
     </div>
 @endtemplate
