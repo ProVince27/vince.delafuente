@@ -43,7 +43,7 @@ return [
 
         'database' => [
             'driver' => 'database',
-            'table' => 'cache',
+            'table' => 'system_cache',
             'connection' => null,
         ],
 

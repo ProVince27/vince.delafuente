@@ -11,7 +11,7 @@ class CreateCmsPagesTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('cms_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->longText('content')->nullable();

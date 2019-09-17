@@ -104,7 +104,7 @@ return [
     |
     */
     'user_models' => [
-        'users' => 'App\Models\User\User',
+        'users' => 'App\Models\Users\User',
     ],
 
     /*
