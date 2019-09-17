@@ -14,6 +14,10 @@ return [
         'user' => [
             'profile' => 'r,u'
         ],
+        'developer' => [
+            'devtools' => ['c,r,u,d'],
+            'profile' => ['r,u']
+        ],
     ],
     'permission_structure' => [
         'cru_user' => [
@@ -25,5 +29,6 @@ return [
         'r' => 'read',
         'u' => 'update',
         'd' => 'delete'
-    ]
+    ],
+    'will_create_user' => false
 ];
