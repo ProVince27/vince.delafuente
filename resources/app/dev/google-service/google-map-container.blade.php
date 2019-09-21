@@ -17,11 +17,11 @@
     <content-body>
         <row>
             <div class="col-lg-6 col-sm-12">
-                <card :is-loading="isLoading">
+                <card ref="mapis" :is-processing="isLoading">
                     <card-header title="Google Map" />
                     <card-body>
-                        {{-- <bs-button @click="doTest"> test </bs-button> --}}
-                {{-- <div ref="gmap"></div> --}}
+                        {{-- <bs-button @click="isProcessing"> test </bs-button> --}}
+                    {{-- <div ref="gmap"></div> --}}
                     <google-map-autocomplete 
                         v-model="search"
                         @placeChanged="changedPlace"
@@ -50,7 +50,7 @@
                             </google-marker-info-window>
                         </google-marker>
                     </google-map> 
-                    </card-body>
+                    </card-body> 
                 </card>             
             </div>
         </row>

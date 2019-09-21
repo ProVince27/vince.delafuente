@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <template v-if="isLoading">
+        <template v-if="processing">
             <div class="overlay dark">
               <i class="fas fa-2x fa-sync-alt fa-spin"></i>
             </div>
@@ -12,9 +12,22 @@
 export default {
     name:"card",
     props:{
-        isLoading:{
+        isProcessing:{
             type:Boolean,
             default:false
+        }
+    },
+    data(){
+        return {
+            processing:this.isProcessing
+        }
+    },
+    methods:{
+        start(){
+            this.processing = true
+        },
+        end(){
+            this.processing = false
         }
     }
 }

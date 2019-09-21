@@ -2,15 +2,16 @@
 import { addComponents } from 'utils/bundle'
 import { get } from 'utils/network'
 import * as containers from 'components/containers'
+import * as btn from 'components/button'
 import * as map from 'components/google-map'
 import GeocodeMixin from 'components/google-map/utils/geocode-mixin'
+import HelperMixin from 'mixins/helperMixin'
 
 export default {
     template:'#google-map-container',
     name:'google-map-container',
-    mixins:[GeocodeMixin],
+    mixins:[GeocodeMixin,HelperMixin],
     data:()=>({
-        // markers:PATHS,
         marker:{
             title:"Hello world",
             lat: 14.8481447,
@@ -29,7 +30,8 @@ export default {
     }),
     components: {
         ...containers,
-        ...map
+        ...map,
+        ...btn
     },
     methods:{
         addMarker(e) {
@@ -40,7 +42,7 @@ export default {
         },
         changedPlace({geometry,place_id}){
             const vm = this
-            vm.isLoading = true;
+            vm.showProcessOn('mapis').start()
             this.geocode({'placeId': place_id})
             .then(d => d)
             .then(({city,position,state})=>{
@@ -58,20 +60,21 @@ export default {
                     } )
                     return vm.paths
                 }).then((points)=>{
-                    // console.log(points)
                     vm.heatPoints =  points.map((lat,lng)=>{
                         return new google.maps.LatLng(lat, lng)
                     })
-
-                    vm.isLoading = false;
                 })
-                
-
             }).catch((e)=>{
-                vm.isLoading = false;
                 console.log(e)
-            })
+            }).finally(() => vm.showProcessOn('mapis').end() )
         },
+        isProcessing(){
+            const vm = this
+            
+            setTimeout(()=>{
+                vm.showProcessOn('mapis').end()
+            },300)
+        }
     },
 }
 
