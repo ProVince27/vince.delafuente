@@ -1,10 +1,11 @@
-<template></template>
 <script>
-// import { mapMixins } from './google-mixins'
-import { RADIUS_STYLE } from './google-map-settings'
+import { RADIUS_STYLE } from './utils/map-style'
 export default {
     name:'google-circle',
     inject:['$marker'],
+    render (h) {
+        return h('div',this.$slots.default)
+    },
     props:{
         radius:{
             type:Number,
@@ -29,7 +30,7 @@ export default {
         position:null,
     }),
     methods:{
-        initCircle(marker){
+        componentWillInit(marker){
             if(marker){
                 const { lat,lng } = marker.position
                 this.position = {
@@ -51,11 +52,8 @@ export default {
             }
         }
     },
-    mounted(){
-        const vm = this
-        this.$marker.then((marker)=>{
-            vm.initCircle(marker)
-        })
+    created(){
+        this.$marker.then(this.componentWillInit)
     }
 }
 </script>

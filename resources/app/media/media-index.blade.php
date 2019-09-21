@@ -9,7 +9,9 @@
             <content-title title="Media Manager" />
         </content-header>
         <content-body>
-            
+            <card >
+                <file-manager/>
+            </card>
         </content-body>
     </div>
 @endtemplate

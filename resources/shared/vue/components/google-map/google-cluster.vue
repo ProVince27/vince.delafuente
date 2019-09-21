@@ -23,7 +23,7 @@ export default {
         }
     },
     methods:{
-        handleCluster(map){
+        componentWillInit(map){
             this.cluster = new MarkerClusterer(map,null,
                 {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}
             )
@@ -31,7 +31,7 @@ export default {
         }
     },
     created(){
-        this.gmap.then(this.handleCluster)
+        this.gmap.then(this.componentWillInit)
     }
 }
 </script>

@@ -1,12 +1,16 @@
 require('./bootstrap');
 
-window.Vue = require('vue')
+// window.Vue = require('vue')
+// window.Vuex = require('vuex')
+import Vue from 'vue'
+import Vuex from 'vuex'
+import store from 'store'
 
-import * as Components from './shared/vue/components/index-components'
+import FileManager from 'laravel-file-manager'
 
-Object.keys(Components)
-   .forEach(key => Vue.component(Components[key].name, Components[key]))
+Vue.use(Vuex);
 
+Vue.use(FileManager, {store});
 
 import './app/dashboard/dashboard'
 
@@ -16,4 +20,5 @@ import './app/media/media'
 
 // initialize parent component
 const app = new Vue({
+    store
 }).$mount('#app');

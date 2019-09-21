@@ -17,7 +17,7 @@ export { default as InfoBoxContent } from './containers/info-box/InfoBoxContent'
 export { default as InfoBoxIcon } from './containers/info-box/InfoBoxIcon'
 
 /* buttons */
-export { default as Button } from './button/Button'
+export { default as BsButton } from './button/Button'
 export { default as ButtonLink } from './button/ButtonLink'
 export { default as ButttonSubmit } from './button/ButtonSubmit'
 

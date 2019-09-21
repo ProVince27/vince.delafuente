@@ -18,7 +18,7 @@ export default {
         }
     },
     methods:{
-        componentWillCreate(map){
+        componentWillInit(map){
             this.heatMap = new google.maps.visualization.HeatmapLayer({
                 data: this.points,
                 map,
@@ -43,11 +43,10 @@ export default {
         },
     },
     mounted(){
-        this.gmap.then(this.componentWillCreate)
+        this.gmap.then(this.componentWillInit)
     },
     watch:{
         points(n){
-            // console.log(n)
             this.heatMap.set('data',n)
         }
     }

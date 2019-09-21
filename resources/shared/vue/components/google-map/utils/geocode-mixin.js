@@ -1,5 +1,5 @@
 
-export const GoogleGeocodeMixins = {
+export default {
     data(){
         return {
             _geocoder:{},

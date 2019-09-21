@@ -2,8 +2,14 @@
     <form-input type="text" ref="google_search" v-model="search" />
 </template>
 <script>
+
+import { FormInput } from 'components/input'
+
 export default {
     name:'google-map-autocomplete',
+    components:{
+        FormInput
+    },
     props:{
         countryRestriction:{
             default:'ph'

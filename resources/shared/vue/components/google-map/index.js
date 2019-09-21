@@ -1,0 +1,8 @@
+export { default as GoogleCircle } from './google-circle'
+export { default as GoogleCluster } from './google-cluster'
+export { default as GoogleHeatMap } from './google-heat-map'
+export { default as GoogleMapAutocomplete } from './google-map-autocomplete'
+export { default as GoogleMap } from './google-map'
+export { default as GoogleMarkerInfoWindow  } from './google-marker-info-window'
+export { default as GoogleMarker } from './google-marker'
+export { default as GooglePolygon } from './google-polygon'

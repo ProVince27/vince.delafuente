@@ -36,21 +36,20 @@
                             v-if="heatPoints"
                             :points="heatPoints"
                         />
-                        {{-- <google-polygon 
+                        <google-polygon 
                             v-if="paths"
                             :paths="paths"
-                        /> --}}
-                        {{-- <google-marker
+                        />
+                        <google-marker
                             :lat="marker.lat"
                             :lng="marker.lng"
-                        /> --}}
-                            {{-- <google-circle :radius="3000" /> --}}
-                            {{-- <google-marker-info-window>
+                        >
+                            <google-circle :radius="3000" />
+                            <google-marker-info-window>
                                 <p>Pin</p>
-                            </google-marker-info-window> --}}
-                        {{-- </google-marker> --}}
+                            </google-marker-info-window>
+                        </google-marker>
                     </google-map> 
-
                     </card-body>
                 </card>             
             </div>

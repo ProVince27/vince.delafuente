@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/base','Controller@index')->name('parent');
-Route::get('/child','Controller@index')->name('child1');
-Route::get('/child2','Controller@index')->name('child2');
+Route::get('/base','Dev\HeroController@index')->name('parent');
+Route::get('/child','Dev\HeroController@index')->name('child1');
+Route::get('/child2','Dev\HeroController@index')->name('child2');
 Route::get('/content','Dashboard\DashboardController@index')->name('dashboard');

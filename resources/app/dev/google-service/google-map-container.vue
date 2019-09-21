@@ -1,12 +1,14 @@
 <script>
 import { addComponents } from 'utils/bundle'
-import { GoogleGeocodeMixins } from './__includes/google-map/_utils'
-import {get} from 'utils/network'
+import { get } from 'utils/network'
+import * as containers from 'components/containers'
+import * as map from 'components/google-map'
+import GeocodeMixin from 'components/google-map/utils/geocode-mixin'
 
 export default {
     template:'#google-map-container',
     name:'google-map-container',
-    mixins:[GoogleGeocodeMixins],
+    mixins:[GeocodeMixin],
     data:()=>({
         // markers:PATHS,
         marker:{
@@ -25,16 +27,10 @@ export default {
         heatPoints:null,
         isLoading:false,
     }),
-    components: addComponents(
-            require('./__includes/google-map/google-map').default,
-            require('./__includes/google-map/google-polygon').default,
-            require('./__includes/google-map/google-heat-map').default,
-            // require('./__includes/google-map/google-marker').default,
-            // require('./__includes/google-map/google-marker-info-window').default,
-            // require('./__includes/google-map/google-circle').default,
-            require('./__includes/google-map/google-map-autocomplete').default,
-            // require('./__includes/google-map/google-cluster').default
-    ),
+    components: {
+        ...containers,
+        ...map
+    },
     methods:{
         addMarker(e) {
             this.markers.push({lat:lat(),lng:lng()})
@@ -48,7 +44,6 @@ export default {
             this.geocode({'placeId': place_id})
             .then(d => d)
             .then(({city,position,state})=>{
-                    
                 return get(route('dev.google-kml',{
                     city,
                     state
@@ -67,6 +62,7 @@ export default {
                     vm.heatPoints =  points.map((lat,lng)=>{
                         return new google.maps.LatLng(lat, lng)
                     })
+
                     vm.isLoading = false;
                 })
                 

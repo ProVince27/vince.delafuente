@@ -1,7 +1,4 @@
 <script>
-import { INFOWINDOW,RADIUS_STYLE } from './google-map-settings'
-import { types } from 'util';
-
 export default {
     template:'<div><slot/></div>',
     name:'google-marker',

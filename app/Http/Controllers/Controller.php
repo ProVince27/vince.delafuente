@@ -10,8 +10,4 @@ use Icg\Support\ResponseApiTrait;
 
 class Controller extends BaseController {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ResponseApiTrait;
-
-    // public function index(){
-    //     return view('shared.layouts.app');
-    // }
 }
