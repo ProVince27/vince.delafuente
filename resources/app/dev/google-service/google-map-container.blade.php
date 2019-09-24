@@ -36,10 +36,10 @@
                             v-if="heatPoints"
                             :points="heatPoints"
                         />
-                        <google-polygon 
+                        {{-- <google-polygon 
                             v-if="paths"
                             :paths="paths"
-                        />
+                        /> --}}
                         <google-marker
                             :lat="marker.lat"
                             :lng="marker.lng"

@@ -69,13 +69,28 @@ export default {
             }).finally(() => vm.showProcessOn('mapis').end() )
         },
         isProcessing(){
-            const vm = this
-            
+            const vm = this    
             setTimeout(()=>{
                 vm.showProcessOn('mapis').end()
             },300)
+        },
+        async setHeatMakers(){
+            const { data } = await get(route('dev.google-kml',{
+                city:'Malolos'
+            }))
+            this.heatPoints = data.data.map(m => {
+                let lt = {
+                    location:  new google.maps.LatLng(m.lat,m.lng),
+                    gradient: m.color
+                }
+                return lt
+            })
+            
         }
     },
+    mounted(){
+        this.setHeatMakers()
+    }
 }
 
 </script>

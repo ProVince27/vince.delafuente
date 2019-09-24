@@ -58,7 +58,9 @@ export default {
                 // icon: POINT_MARKER_ICON_CONFIG
             })
             if(this.cluster){
+                console.log(this.pin)
                 this.cluster.addMarker(this.pin)
+
             }
 
             google.maps.event.addListener(this.pin,'dragend',(args)=> vm.onDragend(args))
