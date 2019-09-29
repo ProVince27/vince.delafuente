@@ -13,6 +13,7 @@ class CreateCmsPagesTable extends Migration {
     public function up() {
         Schema::create('cms_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('parent_page_id')->nullable();
             $table->string('title');
             $table->longText('content')->nullable();
             $table->string('template')->nullable();
