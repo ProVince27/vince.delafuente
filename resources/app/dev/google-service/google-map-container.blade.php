@@ -43,6 +43,7 @@
                         <google-marker
                             :lat="marker.lat"
                             :lng="marker.lng"
+                            :draggable.boolean="true"
                         >
                             <google-circle :radius="3000" />
                             <google-marker-info-window>
