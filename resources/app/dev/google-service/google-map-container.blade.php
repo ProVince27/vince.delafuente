@@ -28,14 +28,15 @@
                     />
                     <google-map
                         style="height:375px;"
-                        ref="gmap"
                         :zoom="zoom"
                         :center="center"
+                        :lat ="center.lat"
+                        :lng ="center.lng"
                     >
-                        <google-heat-map 
+                        {{-- <google-heat-map 
                             v-if="heatPoints"
                             :points="heatPoints"
-                        />
+                        /> --}}
                         {{-- <google-polygon 
                             v-if="paths"
                             :paths="paths"

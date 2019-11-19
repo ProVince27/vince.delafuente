@@ -21,7 +21,7 @@ export default {
         geocoder:null,
         center:{
            lat: 14.8481447,
-            lng: 120.8093657
+           lng: 120.8093657
         },
         zoom:13,
         paths:null,
@@ -46,7 +46,15 @@ export default {
             this.geocode({'placeId': place_id})
             .then(d => d)
             .then(({city,position,state})=>{
-                return get(route('dev.google-kml',{
+                console.log(position)
+                this.marker.lat = position.lat
+                this.marker.lng = position.lng
+                this.center.lat = position.lat
+                this.center.lng = position.lng
+                this.zoom = 13
+                // this.$refs.gmap.setCenter(position);
+                // console.log(this.$refs.gmap)
+                /* return get(route('dev.google-kml',{
                     city,
                     state
                 })).then(({data}) => {
@@ -63,7 +71,7 @@ export default {
                     vm.heatPoints =  points.map((lat,lng)=>{
                         return new google.maps.LatLng(lat, lng)
                     })
-                })
+                }) */
             }).catch((e)=>{
                 console.log(e)
             }).finally(() => vm.showProcessOn('mapis').end() )

@@ -24,6 +24,16 @@ export default {
                 }
             }
         },
+        lat:{
+            default(){
+                return 14.55272
+            }
+        },
+        lng:{
+            default(){
+                return 121.05268
+            }
+        },
         zoom:{
             default:9,
             type:Number
@@ -50,14 +60,25 @@ export default {
         
         this.$emit('onLoadMap',this.map)
     },
+    methods:{
+        setCenter(coordinate){
+            this.map.setCenter(coordinate)
+        }
+    },
     watch:{
-        center(n){
-            this.map.setCenter(n)
+        // center(n){
+        //     this.map.setCenter(n)
+        // },
+        lat(lat){
+            this.map.setCenter({lat,lng:this.lng})
+        },
+        lng(lng){
+            this.map.setCenter({lat:this.lat,lng})
         },
         zoom(n){
             this.map.setZoom(n)
         }
-    }
+    },
 }
 </script>
 <style scoped>
