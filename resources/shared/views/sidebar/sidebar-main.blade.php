@@ -56,7 +56,9 @@
                     </a>
                 </li> 
             </ul> --}}
-            {!! $sidebar !!}
+            <div class="text-xs">
+                {!! $sidebar !!}
+            </div>
         </nav>
         <!-- /.sidebar-menu -->
     </div>

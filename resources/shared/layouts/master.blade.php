@@ -14,7 +14,7 @@
     @stack('plugins.js.top')
     @stack('style')
 </head>
-<body class = "@yield('body-class','sidebar-mini fixed ') sidebar-collapse text-sm" >
+<body class = "@yield('body-class','sidebar-mini fixed ') text-sm" >
     <div id="app" class = "wrapper">
         @yield('content')
     </div>
