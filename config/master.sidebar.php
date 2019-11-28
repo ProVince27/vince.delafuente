@@ -13,7 +13,7 @@ return [
     ],
     [
         'class'       => MasterSidebar::class,
-        'title'       => 'ACL',
+        'title'       => 'Access Control',
         'route'       => 'parent',
         'icon'        => 'fas fa-user-lock',
         'role'        => ['admin'],
@@ -41,7 +41,7 @@ return [
         'items'       => [
             [
                 'class' => MasterSidebar::class,
-                'title' => 'Google Map',
+                'title' => 'Maps',
                 'icon'  => 'fas fa-map-marked-alt',
                 'route' => 'dev.google-map',
             ],
@@ -52,5 +52,26 @@ return [
                 'route' => 'dev.media-manager',
             ]
         ],
-    ]
+    ],
+    [
+        'class'       => MasterSidebar::class,
+        'title'       => 'Navigations',
+        'route'       => '#',
+        'icon'        => 'fas fa-compass',
+        'items'       => [
+            [
+                'class' => MasterSidebar::class,
+                'title' => 'Sidebar Menu',
+                'icon'  => 'fab fa-elementor',
+                'route' => 'dev.google-map',
+            ],
+            [
+                'class' => MasterSidebar::class,
+                'title' => 'Menu',
+                'icon'  => 'far fa-caret-square-down',
+                'route' => 'dev.media-manager',
+            ]
+        ],
+    ],
+
 ];
