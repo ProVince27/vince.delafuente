@@ -25,6 +25,7 @@ let token = document.head.querySelector('meta[name="csrf-token"]');
 if (token) {
     window.APP_TOKEN = token.content;
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-TIMEZONE'] = Intl.DateTimeFormat().resolvedOptions().timeZone;
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
