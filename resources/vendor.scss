@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 /* fonts awesomes */
 @import '~@fortawesome/fontawesome-free/scss/brands';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+@import "~admin-lte/plugins/select2/css/select2.min";
+@import "~admin-lte/plugins/select2-bootstrap4-theme/select2-bootstrap4";
 /* bootstrap */
+
+@import 'shared/styles/variables';
 @import "~bootstrap/scss/bootstrap";
 @import "~admin-lte/build/scss/AdminLTE-raw";
 
 @import "shared/views/menu/mega-menu/mega-menu";
 /* plugins */
-@import "~admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min"
+@import "~admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min";
+
+
+/* helpers */
+// @import "shared/styles/helper";

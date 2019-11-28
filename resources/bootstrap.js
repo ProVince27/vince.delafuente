@@ -2,8 +2,9 @@
 
 try{
     window.$ = window.jQuery = require('jquery');
-    require('bootstrap');
-    require('admin-lte');
+    require('bootstrap')
+    require('admin-lte')
+    require('select2')
     require('admin-lte/plugins/overlayScrollbars/js/OverlayScrollbars')
 } catch(e){
     console.log(e)

@@ -1,37 +1,6 @@
-// Font Family
-@font-family-sans-serif:  'Montserrat', Helvetica, Arial, sans-serif;
+$grid-columns:      12;
+$grid-gutter-width: 15px;
 
-// Brands
-@brand-primary: #F5811E;
-@brand-secondary: #313131;
-@brand-success: #5cb85c;
-@brand-info:    #5bc0de;
-@brand-warning: #f0ad4e;
-@brand-danger:  #fa5358;
+$sidebar-width: 200px !default;
 
-@dark-400: #707070;
-@dark-300: #929292;
-@dark-200: #f8f8f8;
-
-// ADMINLTE
-@light-blue: @brand-primary;
-@red: @brand-danger;
-@green: @brand-success;
-@aqua: @brand-info;
-@yellow: @brand-warning;
-
-
-// Component Specific Colors
-@header-background-color: white; 
-@sidebar-background-color: #FBFBFB;
-@metabox-background-color: #F8F8F8;
-
-// Component Specific Size
-@text-input-height-size: 38px;
-
-@media (max-width: 767px){
-    .skin-blue .main-header .navbar .sidebar-toggle{
-        display: inline-block !important;
-        color:@brand-primary;
-    }
-}
+$font-family-sans-serif:    'Roboto', sans-serif;
