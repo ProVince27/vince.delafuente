@@ -23,13 +23,13 @@ return [
                 'class' => MasterSidebar::class,
                 'title' => 'Roles',
                 'icon'  => 'fas fa-user-tie',
-                'route' => 'child1',
+                'route' => 'role.index',
             ],
             [
                 'class' => MasterSidebar::class,
                 'title' => 'Permissions',
                 'icon'  => 'fas fa-user-cog',
-                'route' => 'child2',
+                'route' => 'permission.index',
             ],
         ],
     ],
@@ -55,21 +55,21 @@ return [
     ],
     [
         'class'       => MasterSidebar::class,
-        'title'       => 'Navigations',
+        'title'       => 'Navigation',
         'route'       => '#',
         'icon'        => 'fas fa-compass',
         'items'       => [
             [
                 'class' => MasterSidebar::class,
-                'title' => 'Sidebar Menu',
+                'title' => 'Sidebar',
                 'icon'  => 'fab fa-elementor',
-                'route' => 'dev.google-map',
+                'route' => 'sidebar.index',
             ],
             [
                 'class' => MasterSidebar::class,
                 'title' => 'Menu',
                 'icon'  => 'far fa-caret-square-down',
-                'route' => 'dev.media-manager',
+                'route' => 'menu.index',
             ]
         ],
     ],

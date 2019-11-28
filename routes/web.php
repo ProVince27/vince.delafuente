@@ -16,3 +16,13 @@ Route::get('/base','Dev\HeroController@index')->name('parent');
 Route::get('/child','Dev\HeroController@index')->name('child1');
 Route::get('/child2','Dev\HeroController@index')->name('child2');
 Route::get('/content','Dashboard\DashboardController@index')->name('dashboard');
+
+Route::group(['namespace' => 'Access'],function(){
+    Route::view('role','app.dev.underconstruction.underconstruction-page',['title' => 'Role'])->name('role.index');
+    Route::view('permission','app.dev.underconstruction.underconstruction-page',['title' => 'Permission'])->name('permission.index');
+});
+
+Route::group(['namespace' => 'navigation'],function(){
+    Route::view('sidebar','app.dev.underconstruction.underconstruction-page',['title' => 'Sidebar'])->name('sidebar.index');
+    Route::view('menu','app.dev.underconstruction.underconstruction-page',['title' => 'Menu'])->name('menu.index');
+});

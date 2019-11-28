@@ -30,6 +30,8 @@ import './app/dev/google-service'
 
 import './app/media/media'
 
+import './app/dev/underconstruction/underconstruction'
+
 // initialize parent component
 const app = new Vue({
     store

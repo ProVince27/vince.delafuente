@@ -1,5 +1,5 @@
 
-<aside class="main-sidebar sidebar-light-primary elevation-0">
+<aside class="main-sidebar sidebar-dark-primary elevation-0">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
         <img src="{{config('project.images.default')}}" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-0"
