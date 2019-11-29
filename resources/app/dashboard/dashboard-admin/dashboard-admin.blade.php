@@ -34,6 +34,54 @@
                 </info-box>
             </div>
         </row>
+        <row>
+            <div class="col-md-12">
+                <card>
+                    {{-- <card-header></card-header> --}}
+                    <card-body>
+                            <table class="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th>ID</th>
+                                        <th>User</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Reason</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr @contextmenu.prevent="$refs.menu.open">
+                                            <td>183</td>
+                                            <td>John Doe</td>
+                                            <td>11-7-2014</td>
+                                            <td><span class="tag tag-success">Approved</span></td>
+                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                        </tr>
+                                        <tr @contextmenu.prevent="$refs.menu.open">
+                                            <td>219</td>
+                                            <td>Alexander Pierce</td>
+                                            <td>11-7-2014</td>
+                                            <td><span class="tag tag-warning">Pending</span></td>
+                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <vue-context ref="menu">
+                                    <li>
+                                        <a @click.prevent="onClick($event.target.innerText)">
+                                            Do something
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a @click.prevent="onClick($event.target.innerText)">
+                                            Do something else
+                                        </a>
+                                    </li>
+                                </vue-context>
+                    </card-body>
+                </card>
+            </div>
+        </row>
     </content-body>
 </div>
 @endtemplate
