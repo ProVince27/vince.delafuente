@@ -4,3 +4,12 @@
 [v-cloak] > * { display:none }
 [v-cloak]::before { content: "" }
 
+// Navbar badge
+.navbar-badge {
+    font-size: .6rem;
+    font-weight: 300;
+    padding: 2px 4px;
+    position: absolute;
+    right: -4px;
+    top: 1px;
+}

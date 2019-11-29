@@ -1,17 +1,5 @@
-<nav class="main-header navbar navbar-expand navbar-dark navbar-gray-dark">
-    <!-- Left navbar links -->
-    {{-- <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-        </li>
-    </ul> --}}
-
+<nav class="main-header navbar navbar-expand navbar-dark navbar-gray-dark overflow-auto">
+    
     @include('shared.views.menu.mega-menu.mega-menu')
 
     <!-- SEARCH FORM -->
@@ -111,6 +99,18 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#" class="display-relative" style="top:-4px;">
+                <img src="https://via.placeholder.com/300x300" width="30px" height="30px" alt="..." class="rounded-0">
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-envelope mr-2"></i> 4 new messages
+                        <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
             </div>
         </li>
         <li class="nav-item">

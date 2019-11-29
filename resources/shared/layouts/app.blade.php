@@ -11,10 +11,17 @@
     {{-- End-Main-Sidebar --}}
     
     {{-- Content-Wrapper-Page --}}
-        <div class="content-wrapper">
-            <div v-cloak>
+        <div class="content-wrapper"  v-cloak>
+            {{-- <div class="sidemenu-control" style="position: absolute;
+            top: 44px;
+            background: #343a40;
+            z-index: 48;
+            font-size: 8px;">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>            
+            </div> --}}
+            {{-- <div> --}}
                 @yield('app-content')
-            </div>
+            {{-- </div> --}}
         </div>
     {{-- End-Content-Wrapper-Page --}}
 

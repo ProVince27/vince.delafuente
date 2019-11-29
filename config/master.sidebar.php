@@ -14,7 +14,7 @@ return [
     [
         'class'       => MasterSidebar::class,
         'title'       => 'Access Control',
-        'route'       => 'parent',
+        'route'       => '#',
         'icon'        => 'fas fa-user-lock',
         'role'        => ['admin'],
         'permissions' => ['can_view_dashboard'],

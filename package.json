@@ -34,6 +34,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.21",
         "@google/markerclusterer": "^1.0.3",
+        "crypto-js": "^3.1.9-1",
         "driver.js": "^0.9.7",
         "google-maps-api-loader": "^1.1.1",
         "laravel-file-manager": "^2.4.4",

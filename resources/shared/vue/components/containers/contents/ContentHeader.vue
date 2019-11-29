@@ -1,9 +1,6 @@
 <template>
-    <div class="content-header">
-        <!-- <div class="container-fluid"> -->
-        <div class="">
-            <slot></slot>
-        </div>
+    <div class="content-header mb-3">
+        <slot></slot>
     </div>
 </template>
 

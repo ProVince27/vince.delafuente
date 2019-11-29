@@ -12,10 +12,7 @@
 */
 
 
-Route::get('/base','Dev\HeroController@index')->name('parent');
-Route::get('/child','Dev\HeroController@index')->name('child1');
-Route::get('/child2','Dev\HeroController@index')->name('child2');
-Route::get('/content','Dashboard\DashboardController@index')->name('dashboard');
+Route::get('/','Dashboard\DashboardController@index')->name('dashboard');
 
 Route::group(['namespace' => 'Access'],function(){
     Route::view('role','app.dev.underconstruction.underconstruction-page',['title' => 'Role'])->name('role.index');
