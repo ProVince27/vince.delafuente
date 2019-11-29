@@ -26,7 +26,7 @@ Object.keys(globalComponent)
 
 import './app/dashboard/dashboard'
 
-import './app/dev/google-service'
+import './app/dev/google-service/google-service'
 
 import './app/media/media'
 

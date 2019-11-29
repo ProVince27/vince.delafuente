@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-dark navbar-gray-dark overflow-auto">
+<nav class="main-header navbar navbar-expand navbar-dark">
     
     @include('shared.views.menu.mega-menu.mega-menu')
 
@@ -101,23 +101,46 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#" class="display-relative" style="top:-4px;">
-                <img src="https://via.placeholder.com/300x300" width="30px" height="30px" alt="..." class="rounded-0">
+        <li class="nav-item dropdown user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <img src="https://via.placeholder.com/300x300" class="user-image img-circle elevation-2" alt="User Image">
+              <span class="d-none d-md-inline">Alexander Pierce</span>
             </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-envelope mr-2"></i> 4 new messages
-                        <span class="float-right text-muted text-sm">3 mins</span>
-                    </a>
-            </div>
-        </li>
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <!-- User image -->
+              <li class="user-header bg-primary">
+                <img src="https://via.placeholder.com/300x300" class="img-circle elevation-2" alt="User Image">
+    
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+              </li>
+            </ul>
+          </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
                     class="fas fa-th-large"></i></a>
         </li>
     </ul>
-
-    
 </nav>

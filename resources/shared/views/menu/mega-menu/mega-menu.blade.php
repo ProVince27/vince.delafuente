@@ -1,5 +1,5 @@
-<div class="mega-menu">
-    <ul class="navbar-nav mr-auto">
+{{-- <div class=""> --}}
+    <ul class="mega-menu navbar-nav mr-auto">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
@@ -72,5 +72,5 @@
             </div>
         </li>
     </ul>
-</div>
+{{-- </div> --}}
 

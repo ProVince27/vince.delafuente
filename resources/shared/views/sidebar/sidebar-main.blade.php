@@ -10,9 +10,9 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="search-panel mt-1 d-flex">
+        {{-- <div class="search-panel mt-1 d-flex">
             <input class="form-control form-control-sm" type="text" placeholder="Search in sidebar">
-        </div>
+        </div> --}}
         
         <!-- Sidebar Menu -->
         <nav class="mt-2">
