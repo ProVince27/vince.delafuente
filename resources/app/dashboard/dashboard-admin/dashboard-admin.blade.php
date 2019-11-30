@@ -16,7 +16,7 @@
                     
                     <card-header title="Card" />
                     <card-body>
-                        <p>Tis is a content</p>
+                        <p>Small step</p>
                         <bs-button>Click</bs-button>
                     </card-body>
                     <card-footer class="mx-center">This is footer</card-footer>
@@ -52,6 +52,7 @@
                 <card>
                     <loading ref="demo" />
                     <card-body>
+                        <stars :value="3" />
                         <bs-button @click="runLoading"> Lets go </bs-button>
                     </card-body>
                 </card>

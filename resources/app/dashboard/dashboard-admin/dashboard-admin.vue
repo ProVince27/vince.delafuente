@@ -3,16 +3,16 @@ import { addComponents } from 'utils/bundle'
 import * as modal from 'components/modal'
 import { VueContext } from 'vue-context';
 import { LoadingMixin }  from 'components/loaders'
-// import draggable from 'vuedraggable'
+import { default as Stars } from 'components/extra/StarIndicator'
 
 export default {
     name:'dashboard-admin',
     template:'#dashboard-admin',
     mixins:[LoadingMixin],
     components:{
-        
         VueContext:VueContext,
-        ...modal
+        ...modal,
+        Stars,
         // addComponents(...contents),
         // addComponents(...buttons)
     },
