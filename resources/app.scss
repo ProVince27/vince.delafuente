@@ -14,10 +14,15 @@
     top: 1px;
 }
 
+/* context menu ui */
 .v-context,
 .v-context ul {
     padding:0px;
 }
-.v-context > li > a, .v-context ul > li > a {
+
+.v-context > li > a:hover, 
+.v-context > li > a:focus, 
+.v-context ul > li > a:hover, 
+.v-context ul > li > a:focus  {
     cursor: pointer;
 }
