@@ -16,10 +16,12 @@
     </content-header>
     <content-body>
         <row>
-            <div class="col-lg-6 col-sm-12">
-                <card ref="mapis" :is-processing="isLoading">
+            <div class="col-md-6 col-sm-12">
+                <card>
+                    <loading ref="map" />
                     <card-header title="Google Map" />
                     <card-body>
+                    
                         {{-- <bs-button @click="isProcessing"> test </bs-button> --}}
                     {{-- <div ref="gmap"></div> --}}
                     <google-map-autocomplete 
@@ -54,6 +56,14 @@
                     </google-map> 
                     </card-body> 
                 </card>             
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <card>
+                    <loading ref="demo" />
+                    <card-body>
+                        <bs-button @click="isProcessing"> Lets go </bs-button>
+                    </card-body>
+                </card>
             </div>
         </row>
     </content-body>

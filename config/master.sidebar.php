@@ -13,6 +13,7 @@ return [
     ],
     [
         'class'       => MasterSidebar::class,
+        'header'      => 'Tools',
         'title'       => 'Access Control',
         'route'       => '#',
         'icon'        => 'fas fa-user-lock',

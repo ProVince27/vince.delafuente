@@ -1,18 +1,21 @@
 <script>
 import { addComponents } from 'utils/bundle'
-// import {CardHeader,Card,CardBody} from 'components/containers/cards'
 import * as contents from 'components/containers'
 import * as buttons from 'components/button'
-// import draggable from 'vuedraggable'
+import * as modal from 'components/modal'
 import { VueContext } from 'vue-context';
-console.log(VueContext)
+// import draggable from 'vuedraggable'
+// console.log(modal)
+
+
 export default {
     name:'dashboard-admin',
     template:'#dashboard-admin',
     components:{
         ...contents,
         ...buttons,
-        VueContext:VueContext
+        VueContext:VueContext,
+        ...modal
         // addComponents(...contents),
         // addComponents(...buttons)
     },
@@ -37,7 +40,10 @@ export default {
     },
     methods:{
         onClick(e){
-            console.log(e)
+           
+        },
+        openModal(){
+            // console.log(this.$refs.basic)
         }
     },
     mounted(){

@@ -29,9 +29,7 @@ export default {
         isLoading:false,
     }),
     components: {
-        ...containers,
         ...map,
-        ...btn
     },
     methods:{
         addMarker(e) {
@@ -42,45 +40,30 @@ export default {
         },
         changedPlace({geometry,place_id}){
             const vm = this
-            vm.showProcessOn('mapis').start()
+            // vm.showProcessOn('mapis').start()
+            vm.referrence('map').start()
             this.geocode({'placeId': place_id})
             .then(d => d)
             .then(({city,position,state})=>{
-                console.log(position)
+               
                 this.marker.lat = position.lat
                 this.marker.lng = position.lng
                 this.center.lat = position.lat
                 this.center.lng = position.lng
                 this.zoom = 13
-                // this.$refs.gmap.setCenter(position);
-                // console.log(this.$refs.gmap)
-                /* return get(route('dev.google-kml',{
-                    city,
-                    state
-                })).then(({data}) => {
-                    vm.center = position
-                    vm.zoom = 12
-                    vm.paths =  data.data.map(p =>{
-                         return {
-                             lng:p[0],
-                             lat:p[1]
-                         }
-                    } )
-                    return vm.paths
-                }).then((points)=>{
-                    vm.heatPoints =  points.map((lat,lng)=>{
-                        return new google.maps.LatLng(lat, lng)
-                    })
-                }) */
             }).catch((e)=>{
                 console.log(e)
-            }).finally(() => vm.showProcessOn('mapis').end() )
+            })
+            .finally(()=> vm.referrence('map').stop() )
         },
         isProcessing(){
             const vm = this    
+             vm.referrence('demo').start()
             setTimeout(()=>{
-                vm.showProcessOn('mapis').end()
-            },300)
+              vm.referrence('demo').stop()
+            },3000)
+
+           
         },
         async setHeatMakers(){
             const { data } = await get(route('dev.google-kml',{

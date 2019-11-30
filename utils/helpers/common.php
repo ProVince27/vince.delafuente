@@ -5,20 +5,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-/**
- * Limit the number of words in a string.
- *
- * @param  string   $value
- * @param  int      $words
- * @param  string   $end
- * @return string
- */
-if (!function_exists('words_limit')) {
-    function words_limit($value, $words = 100, $end = '...') {
-        return Str::words($value, $words, $end);
-    }
-}
-
 if (!function_exists('dev_mode')):
     function dev_mode() {
         return App::environment() == 'local';
@@ -72,3 +58,65 @@ if (!function_exists('array_check_contains')):
         ) > 0;
     }
 endif;
+
+
+/**
+ * extract a property of an object use for sidemenu
+ */
+if (!function_exists('hasItemKey')):
+    function hasItemKey($object, $key = "items") {
+        return keyExtractor($object, $key);
+    }
+endif;
+
+/**
+ * extract a specific key of an array|object
+ */
+if (!function_exists('keyExtractor')):
+    function keyExtractor($item, $key = null) {
+        if (is_array($item) && isset($item[$key])) {
+            return $item[$key];
+        }
+        if (is_object($item) && isset($item->{$key})) {
+            return $item->{$key};
+        }
+    }
+endif;
+
+if (!function_exists('dateTimeFormat')):
+    function dateTimeFormat($dateTime, $format = 'Y-m-d H:i:s', $tz = "UTC") {
+        return Carbon::parse($dateTime, $tz)->setTimezone($tz)->format($format);
+    }
+endif;
+
+/**
+ * Check if an Object or array has key
+ * @param [Array|Object] $property
+ * @param [String] $key
+ * @return boolean
+ */
+if (!function_exists('hasKey')):
+    function hasKey($property, $key) {
+        return is_object($property) ? property_exists($property, $key) : array_key_exists($key, $property);
+    }
+endif;
+
+if (!function_exists('json_checker')):
+    function is_json($string, $return_data = false) {
+        $data = json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE) ? ($return_data ? $data : TRUE) : FALSE;
+    }
+endif;
+
+if (!function_exists('has_key_index')):
+    function has_key_index($lists, $key, $alter) {
+        return isset($lists[$key]) ? $lists[$key] : $lists[$alter];
+    }
+endif;
+
+if (!function_exists('vd')):
+    function vd($value) {
+        return var_dump($value);
+    }
+endif;
+

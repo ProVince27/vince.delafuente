@@ -14,10 +14,12 @@ Vue.use(FileManager, {store});
 import * as contents from 'components/containers'
 import * as buttons from 'components/button'
 import * as headings from 'components/headings'
+import { Loading } from 'components/loaders'
 const globalComponent = {
     ...contents,
     ...buttons,
-    ...headings
+    ...headings,
+    Loading
 }
 // load all global components
 Object.keys(globalComponent)

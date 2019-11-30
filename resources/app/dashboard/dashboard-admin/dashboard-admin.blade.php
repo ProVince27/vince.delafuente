@@ -33,6 +33,23 @@
                     </info-box-content>
                 </info-box>
             </div>
+            <div class="col-md-3 p-10">
+                <card>
+                    <card-body>
+                        <bs-button  data-toggle="modal" data-target="#basic" >Open Modal</bs-button>
+                        <modal size="lg" align="center" id="basic">
+                            <modal-header title="Header" />
+                            <modal-body>
+                                Testing 
+                            </modal-body>
+                            <modal-footer>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </modal-footer>
+                        </modal>
+                    </card-body>
+                </card>
+            </div> 
         </row>
         <row>
             <div class="col-md-12">
