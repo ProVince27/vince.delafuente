@@ -1,16 +1,15 @@
 <script>
 import { addComponents } from 'utils/bundle'
 import { get } from 'utils/network'
-import * as containers from 'components/containers'
-import * as btn from 'components/button'
 import * as map from 'components/google-map'
 import GeocodeMixin from 'components/google-map/utils/geocode-mixin'
-import HelperMixin from 'mixins/helperMixin'
+// import HelperMixin from 'mixins/helperMixin'
+import { LoadingMixin }  from 'components/loaders'
 
 export default {
     template:'#google-map-container',
     name:'google-map-container',
-    mixins:[GeocodeMixin,HelperMixin],
+    mixins:[ GeocodeMixin, LoadingMixin ],
     data:()=>({
         marker:{
             title:"Hello world",
@@ -41,7 +40,7 @@ export default {
         changedPlace({geometry,place_id}){
             const vm = this
             // vm.showProcessOn('mapis').start()
-            vm.referrence('map').start()
+            vm.processOn('map').start()
             this.geocode({'placeId': place_id})
             .then(d => d)
             .then(({city,position,state})=>{
@@ -54,16 +53,16 @@ export default {
             }).catch((e)=>{
                 console.log(e)
             })
-            .finally(()=> vm.referrence('map').stop() )
+            .finally(()=> vm.processOn('map').stop() )
         },
         isProcessing(){
             const vm = this    
-             vm.referrence('demo').start()
+             
             setTimeout(()=>{
-              vm.referrence('demo').stop()
+              vm.processOn('demo').start()
             },3000)
 
-           
+           vm.processOn('demo').stop()
         },
         async setHeatMakers(){
             const { data } = await get(route('dev.google-kml',{

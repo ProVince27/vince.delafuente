@@ -1,11 +1,11 @@
- export default {
+export default  {
     data(){
         return {
             ref:null
         }
     },
     methods:{
-        referrence(ref){
+        processOn(ref){
             this.ref = ref
             return this
         },

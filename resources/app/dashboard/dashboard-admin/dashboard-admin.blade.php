@@ -49,6 +49,12 @@
                         </modal>
                     </card-body>
                 </card>
+                <card>
+                    <loading ref="demo" />
+                    <card-body>
+                        <bs-button @click="runLoading"> Lets go </bs-button>
+                    </card-body>
+                </card>
             </div> 
         </row>
         <row>

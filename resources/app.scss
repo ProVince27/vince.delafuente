@@ -18,3 +18,6 @@
 .v-context ul {
     padding:0px;
 }
+.v-context > li > a, .v-context ul > li > a {
+    cursor: pointer;
+}

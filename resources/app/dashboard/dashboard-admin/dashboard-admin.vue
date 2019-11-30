@@ -1,19 +1,16 @@
 <script>
 import { addComponents } from 'utils/bundle'
-import * as contents from 'components/containers'
-import * as buttons from 'components/button'
 import * as modal from 'components/modal'
 import { VueContext } from 'vue-context';
+import { LoadingMixin }  from 'components/loaders'
 // import draggable from 'vuedraggable'
-// console.log(modal)
-
 
 export default {
     name:'dashboard-admin',
     template:'#dashboard-admin',
+    mixins:[LoadingMixin],
     components:{
-        ...contents,
-        ...buttons,
+        
         VueContext:VueContext,
         ...modal
         // addComponents(...contents),
@@ -44,6 +41,10 @@ export default {
         },
         openModal(){
             // console.log(this.$refs.basic)
+        },
+        runLoading(){
+            this.processOn('demo').start() 
+            setTimeout(()=>{  this.processOn('demo').stop() },300)
         }
     },
     mounted(){
