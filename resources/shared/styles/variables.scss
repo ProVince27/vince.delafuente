@@ -1,7 +1,17 @@
 $grid-columns:      12;
-$grid-gutter-width: 15px;
+$grid-gutter-width: 20px;
 
 $sidebar-width: 200px !default;
 
 $font-family-sans-serif:    'Roboto', sans-serif;
-// $main-bg: #white !default;
+
+/* color  */
+$dark:#202124;
+$red-100:#d63031;
+
+$colors: () !default;
+$colors: map-merge((
+    'red-100':$red-100,
+), $colors);
+
+// $primary:rgb(100, 18, 18);
