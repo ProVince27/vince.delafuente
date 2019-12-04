@@ -4,6 +4,7 @@ import * as modal from 'components/modal'
 import { VueContext } from 'vue-context';
 import { LoadingMixin }  from 'components/loaders'
 import { default as Stars } from 'components/extra/StarIndicator'
+import { FormFileInput,FormImage } from 'components/input'
 
 export default {
     name:'dashboard-admin',
@@ -13,6 +14,7 @@ export default {
         VueContext:VueContext,
         ...modal,
         Stars,
+        FormImage
         // addComponents(...contents),
         // addComponents(...buttons)
     },
@@ -32,7 +34,8 @@ export default {
                     name:"sample3"
                 }
 
-            ]
+            ],
+            image:'https://via.placeholder.com/300x300'
         }
     },
     methods:{
@@ -45,6 +48,10 @@ export default {
         runLoading(){
             this.processOn('demo').start() 
             setTimeout(()=>{  this.processOn('demo').stop() },300)
+        },
+        showImage(img){
+            console.log(img)
+            return null;
         }
     },
     mounted(){

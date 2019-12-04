@@ -1,7 +1,7 @@
 <template>
     <div class="modal-header">
-        <heading v-if="title" size="4" title="title" icon="icon" />
-        
+        <heading v-if="title" size="4" :title="title" icon="icon" />
+        <slot></slot>
         <button
             type="button"
             class="close"
@@ -13,17 +13,17 @@
     </div>
 </template>
 <script>
-import { Heading } from 'components/headings'
+import { Heading } from "components/headings";
 export default {
-    name:'modal-header',
-    props:{
-        title:{
-            type:String
+    name: "modal-header",
+    props: {
+        title: {
+            type: String
         },
-        icon:null
+        icon: null
     },
-    components:{
+    components: {
         Heading
     }
-}
+};
 </script>

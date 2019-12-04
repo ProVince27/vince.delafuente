@@ -5,6 +5,10 @@ try{
     require('admin-lte')
     require('select2')
     require('admin-lte/plugins/overlayScrollbars/js/OverlayScrollbars')
+    require('sweetalert2')
+    
+    const toastr = require('toastr')
+    toastr.options.timeOut = 3000;
 } catch(e){
     console.log(e)
 }

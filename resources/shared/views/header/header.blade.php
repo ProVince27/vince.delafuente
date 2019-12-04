@@ -1,5 +1,5 @@
 <nav class="main-header navbar navbar-expand navbar-dark">
-    
+
     @include('shared.views.menu.mega-menu.mega-menu')
 
     <!-- SEARCH FORM -->
@@ -26,7 +26,8 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="{{ config('project.images.default') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                        <img src="{{ config('project.images.default') }}" alt="User Avatar"
+                            class="img-size-50 mr-3 img-circle">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Brad Diesel
@@ -42,7 +43,8 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="{{ config('project.images.default') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                        <img src="{{ config('project.images.default') }}" alt="User Avatar"
+                            class="img-size-50 img-circle mr-3">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 John Pierce
@@ -58,7 +60,8 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="{{ config('project.images.default') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                        <img src="{{ config('project.images.default') }}" alt="User Avatar"
+                            class="img-size-50 img-circle mr-3">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Nora Silvester
@@ -103,41 +106,42 @@
         </li>
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <img src="https://via.placeholder.com/300x300" class="user-image img-circle elevation-2" alt="User Image">
-              <span class="d-none d-md-inline">Alexander Pierce</span>
+                <img src="https://via.placeholder.com/300x300" class="user-image img-circle elevation-2"
+                    alt="User Image">
+                <span class="d-none d-md-inline">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <!-- User image -->
-              <li class="user-header bg-primary">
-                <img src="https://via.placeholder.com/300x300" class="img-circle elevation-2" alt="User Image">
-    
-                <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
-              </li>
+                <!-- User image -->
+                <li class="user-header bg-red-100">
+                    <img src="https://via.placeholder.com/300x300" class="img-circle elevation-2" alt="User Image">
+
+                    <p>
+                        Alexander Pierce - Web Developer
+                        <small>Member since Nov. 2012</small>
+                    </p>
+                </li>
+                <!-- Menu Body -->
+                <li class="user-body">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <a href="#">Followers</a>
+                        </div>
+                        <div class="col-4 text-center">
+                            <a href="#">Sales</a>
+                        </div>
+                        <div class="col-4 text-center">
+                            <a href="#">Friends</a>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+                </li>
             </ul>
-          </li>
+        </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
                     class="fas fa-th-large"></i></a>

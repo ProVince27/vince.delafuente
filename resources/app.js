@@ -34,6 +34,13 @@ import './app/media/media'
 
 import './app/dev/underconstruction/underconstruction'
 
+Vue.mixin({
+    methods: {
+       route: window.route,
+       path: (name) => `${window.public_path}${name}`
+    }
+ });
+
 // initialize parent component
 const app = new Vue({
     store

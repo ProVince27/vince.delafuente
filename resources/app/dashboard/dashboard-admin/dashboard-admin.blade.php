@@ -15,9 +15,24 @@
                 <card>
                     
                     <card-header title="Card" />
-                    <card-body>
-                        <p>Small step</p>
-                        <bs-button>Click</bs-button>
+                    <card-body >
+                        <div class="row">
+                            {{-- <div class="col-md-3">
+                                <form-image  width="200px" height="200px" label="Select image" />
+                            </div> --}}
+                            <div class="col-md-12">
+                                {{-- <form-image style="width:100% height:320px;" label="Select banner" /> --}}
+                                <form-image
+                                    style="width:100px; height:100px;" 
+                                    label="Select image" 
+                                    v-model="image"
+                                    class="img-circle"
+                                    accept = "image/jpeg, image/png, image/gif"
+                                >
+                                    <img slot-scope="{data}" v-if="data" showImage :src="data" class="w-100 h-100 img-circle" />
+                                </form-image>
+                            </div>
+                        </div>
                     </card-body>
                     <card-footer class="mx-center">This is footer</card-footer>
                 </card>

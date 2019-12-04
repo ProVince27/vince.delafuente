@@ -73,6 +73,7 @@ export function toastSuccess(message, options = {}) {
 
 export function toastError(message, options = {}) {
    const toastr = require('toastr')
+//    console.log(toastr)
    toastr.error(message)
 }
 

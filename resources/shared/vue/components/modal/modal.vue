@@ -1,5 +1,5 @@
 <template>
-    <div class="modal fade" :id="id">
+    <div class="modal fade" ref="modal" :id="id">
         <div class="modal-dialog" :class="dialogStyle" >
             <div class="modal-content"  >
                 <slot />
@@ -12,7 +12,7 @@ export default {
     name:'modal',
     props:{
         id:{
-            required:true
+            required:false
         },
         size:null,
         align:null,
@@ -27,6 +27,14 @@ export default {
             }
         },
     },
+    methods:{
+        show(){
+            $(this.$refs.modal).modal('show')
+        },
+        close(){
+            $(this.$refs.modal).modal('hide')
+        }
+    }
     
 }
 </script>

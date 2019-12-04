@@ -1,0 +1,6 @@
+export { default as alertMixin } from './alertMixin'
+// export { default as historyMixin } from './historyMixin'
+export { default as imageMixin }  from './imageMixin'
+// export { default as processMixin }  from './processMixin'
+// export { default as validationMixin } from './validationMixin'
+// export { default as windowMixin } from './windowMixin'
