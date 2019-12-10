@@ -17,7 +17,7 @@
                     >
                         {{ header.$attrs.name }}
                     </a>
-
+                    <slot name="header"></slot>
                 </li>
             </ul>
         </div>

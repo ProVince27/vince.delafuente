@@ -36,3 +36,6 @@ export { default as FormSelectSearch } from './input/FormSelectWithSearch'
 export { default as FormSelectTagSearch } from './input/FormSelectTagWithSearch'
 export { default as HelpBlock } from './input/HelpBlock'
 export { default as SearchBar } from './input/SearchBar'
+
+export { default as Tabs } from './tab/Tabs'
+export { default as Tab } from './tab/Tab'
