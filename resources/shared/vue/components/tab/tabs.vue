@@ -8,14 +8,14 @@
                     :key="uuid(i)"
                 >
                     <a
-                        role="tab"
-                        data-toggle="pill"
+                        :role="header.$attrs.href ? '':'tab'"
+                        :data-toggle="header.$attrs.href ? '':'pill'"
                         class="nav-link"
                         :class="{ active: header.$attrs.id === activeTab }"
-                        :href="`#${header.$attrs.id}`"
+                        :href="linkable(header.$attrs)"
                         :id="header.$attrs.id"
                         :aria-selected="header.$attrs.id === activeTab"
-                        @click="setActiveTab(header.$attrs.id, $event)"
+                        @click="setActiveTab(header.$attrs, $event)"
                     >
                         {{ header.$attrs.name }}
                     </a>
@@ -38,6 +38,9 @@ export default {
         },
         tabs: {
             default:null
+        },
+        url:{
+            default:null
         }
     },
     data() {
@@ -47,10 +50,13 @@ export default {
         };
     },
     methods: {
-        setActiveTab(id, event) {
+        setActiveTab(tab, event) {
             this.items.forEach(i => {
-                i.isActive = i.$attrs.id === id;
+                i.isActive = i.$attrs.id === tab.id
             });
+        },
+        linkable(tab){
+            return tab.href || `#${tab.id}`
         }
     },
     mounted() {
@@ -69,6 +75,25 @@ export default {
                 this.items.push(i);
             });
         }
+        console.log(this.items)
     }
 };
 </script>
+<style lang="scss">
+.nav{
+white-space: nowrap;
+    display: block!important;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    // overflow-x: scroll;
+    overflow-y: hidden;
+    
+    li {
+        display: inline-block
+    }
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+</style>

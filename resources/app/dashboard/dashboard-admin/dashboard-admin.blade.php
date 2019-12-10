@@ -122,22 +122,22 @@
             </div>
         </row>
         <row>
-            <div class="col-md-4">
-                {{-- <tab class="card-primary">
-                    <tab-header>
-                        <tab-header-list>
-                            <tab-header-item id="test" name="Test" />
-                            <tab-header-item id="testing" name="Testing" />
-                        </tab-header-list>
-                    </tab-header>
-                </tab> --}}
-                {{-- <tabs activeTab="first" :tabs="[{id:'first',name:'test'}]"> --}}
+            <div class="col-md-3">
                 <tabs activeTab="first" >
                     <tab id="first" name="test">
                         test
                     </tab>
-                    <tab id="second" name="Vincent" >
-                        vincent
+                    <tab id="second" name="Vincent 1" >
+                        vincent 1
+                    </tab>
+                    <tab id="third" name="Vincent 2" >
+                        vincent 2
+                    </tab>
+                    <tab id="fourth" name="Vincent 3" >
+                        vincent 3
+                    </tab>
+                    <tab id="fifth" name="Vincent 4" >
+                        vincent 4
                     </tab>
                 </tabs>
             </div>
