@@ -14,7 +14,7 @@ export default {
     name:'tab',
     data(){
         return {
-            isActive:false
+            isActive:false,
         }
     },
     computed:{

@@ -131,6 +131,7 @@
                         </tab-header-list>
                     </tab-header>
                 </tab> --}}
+                {{-- <tabs activeTab="first" :tabs="[{id:'first',name:'test'}]"> --}}
                 <tabs activeTab="first" >
                     <tab id="first" name="test">
                         test
