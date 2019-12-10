@@ -1,7 +1,7 @@
 <template>
     <div :class="['card', variant, 'card-outline card-outline-tabs']">
         <div class="card-header p-0 border-bottom-0">
-            <ul class="nav nav-tabs" role="tablist">
+            <ul class="nav nav-flex nav-tabs" role="tablist">
                 <li
                     class="nav-item"
                     v-for="(header, i) in items"
@@ -37,9 +37,6 @@ export default {
             default: "card-primary"
         },
         tabs: {
-            default:null
-        },
-        url:{
             default:null
         }
     },
@@ -80,12 +77,11 @@ export default {
 };
 </script>
 <style lang="scss">
-.nav{
+.nav-flex.nav-flex{
 white-space: nowrap;
     display: block!important;
     flex-wrap: nowrap;
     max-width: 100%;
-    // overflow-x: scroll;
     overflow-y: hidden;
     
     li {
@@ -93,7 +89,8 @@ white-space: nowrap;
     }
 }
 
-.nav::-webkit-scrollbar {
+.nav-flex::-webkit-scrollbar {
   display: none;
+
 }
 </style>
