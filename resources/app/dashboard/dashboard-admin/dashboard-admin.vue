@@ -4,7 +4,8 @@ import * as modal from 'components/modal'
 import { VueContext } from 'vue-context';
 import { LoadingMixin }  from 'components/loaders'
 import { default as Stars } from 'components/extra/StarIndicator'
-import { FormFileInput,FormImage } from 'components/input'
+import { FormFileInput, FormImage } from 'components/input'
+import * as tab from 'components/tab'
 
 export default {
     name:'dashboard-admin',
@@ -14,7 +15,8 @@ export default {
         VueContext:VueContext,
         ...modal,
         Stars,
-        FormImage
+        FormImage,
+        ...tab
         // addComponents(...contents),
         // addComponents(...buttons)
     },

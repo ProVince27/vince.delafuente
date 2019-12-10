@@ -49,7 +49,7 @@
                 </info-box>
             </div>
             <div class="col-md-3 p-10">
-                <card>
+                <card >
                     <card-body>
                         <bs-button  data-toggle="modal" data-target="#basic" >Open Modal</bs-button>
                         <modal size="lg" align="center" id="basic">
@@ -119,6 +119,26 @@
                                 </vue-context>
                     </card-body>
                 </card>
+            </div>
+        </row>
+        <row>
+            <div class="col-md-4">
+                {{-- <tab class="card-primary">
+                    <tab-header>
+                        <tab-header-list>
+                            <tab-header-item id="test" name="Test" />
+                            <tab-header-item id="testing" name="Testing" />
+                        </tab-header-list>
+                    </tab-header>
+                </tab> --}}
+                <tabs activeTab="first" >
+                    <tab id="first" name="test">
+                        test
+                    </tab>
+                    <tab id="second" name="Vincent" >
+                        vincent
+                    </tab>
+                </tabs>
             </div>
         </row>
     </content-body>
