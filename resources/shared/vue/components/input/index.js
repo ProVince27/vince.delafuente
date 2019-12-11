@@ -2,7 +2,7 @@
 export { default as FormGroup } from './FormGroup'
 export { default as FormHorizontalGroup } from './FormHorizontalGroup'
 export { default as FormDatePicker } from './FormDatePicker'
-export { default as FormDateRangerPicker } from './FormDateRangePicker'
+export { default as FormDateRangePicker } from './FormDateRangePicker'
 export { default as FormFileInput } from './FormFileInput'
 export { default as FormIconInput } from './FormIconInput'
 export { default as FormInput } from './FormInput'

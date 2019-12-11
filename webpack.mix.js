@@ -32,7 +32,8 @@ mix.extract([
     'vuex',
     'vue-context',
     'laravel-file-manager',
-    'vuedraggable'
+    'vuedraggable',
+    'moment'
 ])
 // .versionHash()
  mix.disableNotifications()

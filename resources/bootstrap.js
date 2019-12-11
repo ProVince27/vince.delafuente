@@ -6,7 +6,7 @@ try{
     require('select2')
     require('admin-lte/plugins/overlayScrollbars/js/OverlayScrollbars')
     require('sweetalert2')
-    
+    require('admin-lte/plugins/daterangepicker')
     const toastr = require('toastr')
     toastr.options.timeOut = 3000;
 } catch(e){

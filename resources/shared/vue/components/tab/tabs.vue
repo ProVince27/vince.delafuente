@@ -72,7 +72,7 @@ export default {
                 this.items.push(i);
             });
         }
-        console.log(this.items)
+        
     }
 };
 </script>

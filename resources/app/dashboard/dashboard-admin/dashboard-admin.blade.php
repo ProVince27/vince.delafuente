@@ -32,6 +32,7 @@
                                     <img slot-scope="{data}" v-if="data" showImage :src="data" class="w-100 h-100 img-circle" />
                                 </form-image>
                             </div>
+                            
                         </div>
                     </card-body>
                     <card-footer class="mx-center">This is footer</card-footer>
@@ -47,6 +48,28 @@
                         </span>
                     </info-box-content>
                 </info-box>
+                <div>
+                    <form-date-range-picker 
+                        format = "DD/MM/YYYY"
+                        :maxDate = "new Date()"
+                        :open-at="'right'"
+                        :auto-apply="true"
+                        :show-drop-downs="true"
+                        :ranges="{
+                            'Today': [moment(), moment()],
+                            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                            'This Month': [moment().startOf('month'), moment().endOf('month')],
+                            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                        }"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    
+                </div>
             </div>
             <div class="col-md-3 p-10">
                 <card >
@@ -76,7 +99,7 @@
         <row>
             <div class="col-md-12">
                 <card>
-                    {{-- <card-header></card-header> --}}
+                    <card-header></card-header>
                     <card-body>
                             <table class="table table-hover">
                                     <thead>

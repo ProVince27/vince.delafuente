@@ -4,8 +4,9 @@ import * as modal from 'components/modal'
 import { VueContext } from 'vue-context';
 import { LoadingMixin }  from 'components/loaders'
 import { default as Stars } from 'components/extra/StarIndicator'
-import { FormFileInput, FormImage } from 'components/input'
+import { FormFileInput, FormImage, FormDateRangePicker } from 'components/input'
 import * as tab from 'components/tab'
+import moment from 'moment'
 
 export default {
     name:'dashboard-admin',
@@ -16,6 +17,7 @@ export default {
         ...modal,
         Stars,
         FormImage,
+        FormDateRangePicker,
         ...tab
         // addComponents(...contents),
         // addComponents(...buttons)
@@ -54,6 +56,9 @@ export default {
         showImage(img){
             console.log(img)
             return null;
+        },
+        moment(){
+            return moment()
         }
     },
     mounted(){
