@@ -4,7 +4,7 @@ import * as modal from 'components/modal'
 import { VueContext } from 'vue-context';
 import { LoadingMixin }  from 'components/loaders'
 import { default as Stars } from 'components/extra/StarIndicator'
-import { FormFileInput, FormImage, FormDateRangePicker } from 'components/input'
+import { FormFileInput, FormImage, FormDateRangePicker, FormSelectSearch } from 'components/input'
 import * as tab from 'components/tab'
 import moment from 'moment'
 
@@ -15,10 +15,12 @@ export default {
     components:{
         VueContext:VueContext,
         ...modal,
+        ...tab,
         Stars,
         FormImage,
         FormDateRangePicker,
-        ...tab
+        FormSelectSearch,
+        
         // addComponents(...contents),
         // addComponents(...buttons)
     },
@@ -27,15 +29,15 @@ export default {
             sortable:[
                 {
                     id:1,
-                    name:"sample1"
+                    text:"sample1"
                 },
                 {
                     id:2,
-                    name:"sample2"
+                    text:"sample2"
                 },
                 {
                     id:3,
-                    name:"sample3"
+                    text:"sample3"
                 }
 
             ],

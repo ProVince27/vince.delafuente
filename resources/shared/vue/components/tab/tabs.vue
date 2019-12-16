@@ -8,8 +8,8 @@
                     :key="uuid(i)"
                 >
                     <a
-                        :role="header.$attrs.href ? '':'tab'"
-                        :data-toggle="header.$attrs.href ? '':'pill'"
+                        :role="header.$attrs.href ? '' : 'tab'"
+                        :data-toggle="header.$attrs.href ? '' : 'pill'"
                         class="nav-link"
                         :class="{ active: header.$attrs.id === activeTab }"
                         :href="linkable(header.$attrs)"
@@ -37,7 +37,7 @@ export default {
             default: "card-primary"
         },
         tabs: {
-            default:null
+            default: null
         }
     },
     data() {
@@ -49,22 +49,21 @@ export default {
     methods: {
         setActiveTab(tab, event) {
             this.items.forEach(i => {
-                i.isActive = i.$attrs.id === tab.id
+                i.isActive = i.$attrs.id === tab.id;
             });
         },
-        linkable(tab){
-            return tab.href || `#${tab.id}`
+        linkable(tab) {
+            return tab.href || `#${tab.id}`;
         }
     },
     mounted() {
-        
         if (this.tabs !== null && this.tabs.length > 0) {
-            this.$children[0].isActive = true
+            this.$children[0].isActive = true;
             this.tabs.forEach(i => {
-                this.items.push({ '$attrs':i })
-            })
+                this.items.push({ $attrs: i });
+            });
         }
-        
+
         /* if it has children */
         if (this.tabs === null && this.$children.length > 0) {
             this.$children.forEach(i => {
@@ -72,25 +71,24 @@ export default {
                 this.items.push(i);
             });
         }
-        
     }
 };
 </script>
 <style lang="scss">
-.nav-flex.nav-flex{
-white-space: nowrap;
-    display: block!important;
+.nav-flex.nav-flex {
+    white-space: nowrap;
+    display: block !important;
     flex-wrap: nowrap;
     max-width: 100%;
     overflow-y: hidden;
+    scrollbar-width: none;
     
     li {
-        display: inline-block
+        display: inline-block;
     }
 }
 
-.nav-flex::-webkit-scrollbar {
-  display: none;
-
+.nav-flex::-webkit-scrollbar{
+    display: none;
 }
 </style>

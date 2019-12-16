@@ -78,13 +78,14 @@
                         <modal size="lg" align="center" id="basic">
                             <modal-header title="Header" />
                             <modal-body>
-                                Testing 
+                                <form-select-search :options="sortable" />
                             </modal-body>
                             <modal-footer>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary">Save changes</button>
                             </modal-footer>
                         </modal>
+                        
                     </card-body>
                 </card>
                 <card>
@@ -146,7 +147,7 @@
         </row>
         <row>
             <div class="col-md-3">
-                <tabs activeTab="first" >
+                <tabs activeTab="fourth" >
                     <tab id="first" name="test">
                         test
                     </tab>

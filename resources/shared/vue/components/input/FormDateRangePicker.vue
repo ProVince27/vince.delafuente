@@ -39,7 +39,7 @@ export default {
         includeTime: { type: Boolean, default: false },
         icon: { type: String, default: "glyphicon-calendar" },
 
-        openAt: { default: "left" },
+        openAt: { default: "center" },
         single: { type: Boolean, default: false },
         showDropDowns: { type: Boolean, default: false }
     },
@@ -50,8 +50,6 @@ export default {
 
     methods: {
         loadDateRangePicker() {
-            console.log(this.showDropDowns);
-
             $(this.$el)
                 .daterangepicker({
                     autoUpdateInput: this.autoUpdateInput,
@@ -64,7 +62,7 @@ export default {
                     maxYear: this.maxYear,
                     maxSpan: this.maxSpan ? { days: this.maxSpan } : undefined,
                     locale: { format: this.format },
-                    opens: "center",
+                    opens: this.openAt,
                     showDropdowns: this.showDropDowns,
                     singleDatePicker: this.single
                 })
