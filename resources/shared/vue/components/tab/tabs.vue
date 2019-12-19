@@ -5,7 +5,7 @@
                 <li
                     class="nav-item"
                     v-for="(header, i) in items"
-                    :key="uuid(i)"
+                    :key="header.id +'-'+i"
                 >
                     <a
                         :role="header.$attrs.href ? '' : 'tab'"
@@ -48,6 +48,7 @@ export default {
     },
     methods: {
         setActiveTab(tab, event) {
+
             this.items.forEach(i => {
                 i.isActive = i.$attrs.id === tab.id;
             });
@@ -57,6 +58,7 @@ export default {
         }
     },
     mounted() {
+        console.log(this.activeTab)
         if (this.tabs !== null && this.tabs.length > 0) {
             this.$children[0].isActive = true;
             this.tabs.forEach(i => {
