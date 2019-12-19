@@ -12,6 +12,13 @@ return [
         'permissions' => ['can_view_dashboard'],
     ],
     [
+        'class'  => MasterSidebar::class,
+        'header' => 'Content Mangement',
+        'title'  => 'Page Builder',
+        'route'  => 'page.cms.page-builder',
+        'icon'   => 'fas fa-pen-square',
+    ],
+    [
         'class'       => MasterSidebar::class,
         'header'      => 'Tools',
         'title'       => 'Access Control',
@@ -35,11 +42,11 @@ return [
         ],
     ],
     [
-        'class'       => MasterSidebar::class,
-        'title'       => 'Dev',
-        'route'       => '#',
-        'icon'        => 'fab fa-dev',
-        'items'       => [
+        'class' => MasterSidebar::class,
+        'title' => 'Dev',
+        'route' => '#',
+        'icon'  => 'fab fa-dev',
+        'items' => [
             [
                 'class' => MasterSidebar::class,
                 'title' => 'Maps',
@@ -51,15 +58,15 @@ return [
                 'title' => 'Media',
                 'icon'  => 'fas fa-photo-video',
                 'route' => 'dev.media-manager',
-            ]
+            ],
         ],
     ],
     [
-        'class'       => MasterSidebar::class,
-        'title'       => 'Navigation',
-        'route'       => '#',
-        'icon'        => 'fas fa-compass',
-        'items'       => [
+        'class' => MasterSidebar::class,
+        'title' => 'Navigation',
+        'route' => '#',
+        'icon'  => 'fas fa-compass',
+        'items' => [
             [
                 'class' => MasterSidebar::class,
                 'title' => 'Sidebar',
@@ -71,7 +78,7 @@ return [
                 'title' => 'Menu',
                 'icon'  => 'far fa-caret-square-down',
                 'route' => 'menu.index',
-            ]
+            ],
         ],
     ],
 

@@ -39,6 +39,8 @@ import './app/media/media'
 
 import './app/dev/underconstruction/underconstruction'
 
+import './app/pages/page-builder/page-builder'
+
 Vue.mixin({
     methods: {
         route: window.route,

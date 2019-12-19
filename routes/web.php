@@ -19,7 +19,12 @@ Route::group(['namespace' => 'Access'],function(){
     Route::view('permission','app.dev.underconstruction.underconstruction-page',['title' => 'Permission'])->name('permission.index');
 });
 
-Route::group(['namespace' => 'navigation'],function(){
+Route::group(['namespace' => 'Navigation'],function(){
     Route::view('sidebar','app.dev.underconstruction.underconstruction-page',['title' => 'Sidebar'])->name('sidebar.index');
     Route::view('menu','app.dev.underconstruction.underconstruction-page',['title' => 'Menu'])->name('menu.index');
+});
+
+Route::group(['namespace' => 'Cms'],function(){
+    Route::view('content-management','app.pages.page-builder.page-builder-index',['title' => 'Page Builder'])->name('page.cms.page-builder');
+    // Route::view('content-management','app.pages.page-builder.page-builder-index',['title' => 'Page Builder'])->name('page.cms.page-builder');
 });
