@@ -79,6 +79,66 @@
                             <modal-header title="Header" />
                             <modal-body>
                                 <form-select-search :options="sortable" />
+                                <div class="clear-fix"></div>
+                                <tabs activeTab="fourth" >
+                                    <tab id="first" name="test">
+                                        <card>
+                                            <card-body>
+                                                <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                            <th>ID</th>
+                                                            <th>User</th>
+                                                            <th>Date</th>
+                                                            <th>Status</th>
+                                                            <th>Reason</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr @contextmenu.prevent="$refs.menu.open">
+                                                                <td>183</td>
+                                                                <td>John Doe</td>
+                                                                <td>11-7-2014</td>
+                                                                <td><span class="tag tag-success">Approved</span></td>
+                                                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                                            </tr>
+                                                            <tr @contextmenu.prevent="$refs.menu.open">
+                                                                <td>219</td>
+                                                                <td>Alexander Pierce</td>
+                                                                <td>11-7-2014</td>
+                                                                <td><span class="tag tag-warning">Pending</span></td>
+                                                                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <vue-context ref="menu">
+                                                        <li>
+                                                            <a @click.prevent="onClick($event.target.innerText)">
+                                                                Do something
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a @click.prevent="onClick($event.target.innerText)">
+                                                                Do something else
+                                                            </a>
+                                                        </li>
+                                                    </vue-context>
+                                            </card-body>
+                                        </card>
+                                    </tab>
+                                    <tab id="second" name="Vincent 1" >
+                                        vincent 1
+                                    </tab>
+                                    <tab id="third" name="Vincent 2" >
+                                        vincent 2
+                                    </tab>
+                                    <tab id="fourth" name="Vincent 3" >
+                                        vincent 3
+                                    </tab>
+                                    <tab id="fifth" name="Vincent 4" >
+                                        vincent 4
+                                    </tab>
+                                </tabs>
                             </modal-body>
                             <modal-footer>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -100,7 +160,9 @@
         <row>
             <div class="col-md-12">
                 <card>
-                    <card-header></card-header>
+                    <card-header class="p-1">
+                        <heading size="5" title="Table" />
+                    </card-header>
                     <card-body>
                             <table class="table table-hover">
                                     <thead>
@@ -163,6 +225,14 @@
                     <tab id="fifth" name="Vincent 4" >
                         vincent 4
                     </tab>
+                </tabs>
+            </div>
+            <div class="col-md-3">
+                @php
+                    $tab = (int) request()->tab
+                @endphp
+                <tabs :tabs="tabs" :active-tab.number="{{ $tab ?? 1}}">
+                    <tab id="" href="">{{ $tab }}</tab>
                 </tabs>
             </div>
         </row>

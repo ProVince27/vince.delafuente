@@ -41,6 +41,18 @@ export default {
                 }
 
             ],
+            tabs:[
+                {
+                    id:1,
+                    name:"Sample 1",
+                    href:this.route('dashboard',{tab:1})
+                },
+                {
+                    id:2,
+                    name:"Sample 2",
+                    href:this.route('dashboard',{tab:2})
+                }
+            ],
             image:'https://via.placeholder.com/300x300'
         }
     },
@@ -56,7 +68,6 @@ export default {
             setTimeout(()=>{  this.processOn('demo').stop() },300)
         },
         showImage(img){
-            console.log(img)
             return null;
         },
         moment(){

@@ -58,7 +58,10 @@ export default {
         }
     },
     mounted() {
-        console.log(this.activeTab)
+        /* 
+            use if a tab will work like a menu or a tab need to be redirect
+            object - key requred id,name,href
+         */
         if (this.tabs !== null && this.tabs.length > 0) {
             this.$children[0].isActive = true;
             this.tabs.forEach(i => {
