@@ -12,7 +12,16 @@
         </row>
     </content-header>
     <content-body>
-        
+        <div class="row">
+            <div class="col-md-12">
+                <card>
+                    <card-body>
+                        {{-- <ckeditor :editor="editor" :config="editorConfig"></ckeditor> --}}
+                        <inline-editor ></inline-editor>
+                    </card-body>
+                </card>
+            </div>
+        </div>
     </content-body>
 </div>
 @endtemplate

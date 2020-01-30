@@ -33,7 +33,10 @@ mix.extract([
     'vue-context',
     'laravel-file-manager',
     'vuedraggable',
-    'moment'
+    'moment',
+    '@ckeditor/ckeditor5-build-classic',
+    '@ckeditor/ckeditor5-vue',
+    '@ckeditor/ckeditor5-build-inline'
 ])
 // .versionHash()
  mix.disableNotifications()
