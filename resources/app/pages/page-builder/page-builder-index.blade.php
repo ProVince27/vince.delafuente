@@ -1,6 +1,10 @@
 @extends('shared.layouts.app')
 @section('title',$title)
 @section('app-content')
+
+{{-- @push('plugins.js')
+<script src="https://ckeditor.com/apps/ckfinder/3.4.5/ckfinder.js"></script>
+@endpush --}}
 <page-builder-index></page-builder-index>
 @template(['id' => 'page-builder-index'])
 <div>
@@ -17,7 +21,17 @@
                 <card>
                     <card-body>
                         {{-- <ckeditor :editor="editor" :config="editorConfig"></ckeditor> --}}
-                        <inline-editor ></inline-editor>
+                        {{-- <inline-editor ></inline-editor> --}}
+                        <balloon-editor/>
+                    </card-body>
+                </card>
+            </div>
+        </div><div class="row">
+            <div class="col-md-12">
+                <card>
+                    <card-body>
+                        {{-- <ckeditor :editor="editor" :config="editorConfig"></ckeditor> --}}
+                        {{-- <inline-editor ></inline-editor> --}}
                     </card-body>
                 </card>
             </div>

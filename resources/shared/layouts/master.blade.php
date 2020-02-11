@@ -23,7 +23,7 @@
 {{-- scripts --}}
 @routes
 @stack('plugins.js')
-
+@include('ckfinder::setup')
 <script src="{{ asset('dist/js/manifest.js') }}"></script>
 <script src="{{ asset('dist/js//dist/js/vendor.js') }}"></script> {{-- // bug on webpack 4 the fix will be applied on webpack 5 --}}
 

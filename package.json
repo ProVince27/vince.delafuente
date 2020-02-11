@@ -32,8 +32,12 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-balloon": "^16.0.0",
         "@ckeditor/ckeditor5-build-classic": "^16.0.0",
         "@ckeditor/ckeditor5-build-inline": "^16.0.0",
+        "@ckeditor/ckeditor5-ckfinder": "^16.0.0",
+        "@ckeditor/ckeditor5-easy-image": "^16.0.0",
+        "@ckeditor/ckeditor5-editor-balloon": "^16.0.0",
         "@ckeditor/ckeditor5-vue": "^1.0.1",
         "@fortawesome/fontawesome-svg-core": "^1.2.21",
         "@google/markerclusterer": "^1.0.3",

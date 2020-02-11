@@ -10,9 +10,21 @@
         </content-header>
         <content-body>
             <card >
-                <file-manager/>
+                <div id="ckfinder1"></div>
             </card>
         </content-body>
     </div>
 @endtemplate
+@endsection
+@push('plugin.js.top')
+<script scr="{{ asset('js/ckfinder/ckfinder.js') }}" />
+@endpush
+@section('scripts')
+<script>
+    CKFinder.widget( 'ckfinder1', {
+       width: '100%',
+       height: 800,
+       connectorPath: route('ckfinder_connector').template
+    } );
+</script>
 @endsection

@@ -8,7 +8,8 @@ export default {
     template:'#page-builder-index',
     components:{
         // 'ckeditor':CKEditor.component,
-        'inline-editor': () => import('components/editor/ckeditor/inline-ckeditor')
+        // 'inline-editor': () => import('components/editor/ckeditor/inline-ckeditor'),
+        'balloon-editor': () => import('components/editor/ckeditor/balloon-ckeditor')
     },
     data(){
         return {

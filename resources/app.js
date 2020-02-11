@@ -3,14 +3,14 @@ require('./bootstrap');
 import Vue from 'vue'
 import Vuex from "vuex"
 // import store from 'store'
-Vue.use(Vuex)
-const store =  new Vuex.Store()
+// Vue.use(Vuex)
+// const store =  new Vuex.Store()
 
-import FileManager from 'laravel-file-manager'
+// import FileManager from 'laravel-file-manager'
 
-Vue.use(FileManager, {
-    store
-});
+// Vue.use(FileManager, {
+//     store
+// });
 
 /* global components */
 import * as contents from 'components/containers'
@@ -69,5 +69,5 @@ Vue.prototype.$EventBus = new Vue()
  
 // initialize parent component
 const app = new Vue({
-    store
+    // store
 }).$mount('#app');

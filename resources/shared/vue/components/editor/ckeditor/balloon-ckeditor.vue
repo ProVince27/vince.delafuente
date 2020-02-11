@@ -2,21 +2,15 @@
     <div ref="inline" class="ck-inline-editor"></div>
 </template>
 <script>
-import InlineEditor from "@ckeditor/ckeditor5-build-inline";
+import BalloonEditor from '@ckeditor/ckeditor5-build-balloon';
 export default {
-    name: "inline-ckeditor",
+    name: "ballon-ckeditor",
     props: {
         data: null
-    },
-    components: {
-        // 'ckeditor':CKEditor.component,
-        // 'inline-editor': () => import('components/editor/ckeditor/inline-ckeditor')
     },
     data() {
         return {
             model: this.data
-            // editor: ClassicEditor,
-            // editorConfig:{toolbar: [ 'link', 'heading', 'bold', 'italic', 'numberedList', 'bulletedList','imageUpload']}
         };
     },
     computed: {
@@ -41,7 +35,8 @@ export default {
                     "imageUpload",
                     "ckfinder",
                     "undo",
-                    "redo"
+                    "redo",
+                    "paragraph"
                 ],
                 ckfinder: {
                     // Upload the images to the server using the CKFinder QuickUpload command.
@@ -60,7 +55,7 @@ export default {
     },
     mounted() {
         const vm = this;
-        InlineEditor.create(this.$el, this.ckFinder)
+        BalloonEditor.create(this.$el, this.ckFinder)
             .then(editor => {
                 if (editor.state === "ready") {
                     editor.model.document.on("change:data", e => {
@@ -79,4 +74,4 @@ export default {
 .ck-inline-editor {
     border: dashed 1px #c9c9c9;
 }
-</style>
+</style> 

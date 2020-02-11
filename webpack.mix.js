@@ -31,12 +31,14 @@ mix.extract([
     'lodash',
     'vuex',
     'vue-context',
-    'laravel-file-manager',
+    // 'laravel-file-manager',
     'vuedraggable',
     'moment',
-    '@ckeditor/ckeditor5-build-classic',
+    /* '@ckeditor/ckeditor5-build-classic', */
     '@ckeditor/ckeditor5-vue',
-    '@ckeditor/ckeditor5-build-inline'
+    '@ckeditor/ckeditor5-build-inline',
+    // '@ckeditor/ckeditor5-editor-balloon',
+    '@ckeditor/ckeditor5-ckfinder/src/ckfinder'
 ])
 // .versionHash()
  mix.disableNotifications()
