@@ -16,26 +16,19 @@
         </row>
     </content-header>
     <content-body>
-        <div class="row">
+        {{-- <ckeditor :editor="editor" :config="editorConfig"></ckeditor> --}}
+        {{-- <inline-editor ></inline-editor> --}}
+        {{-- <balloon-editor/> --}}
+       {{--  <div class="row">
             <div class="col-md-12">
                 <card>
                     <card-body>
-                        {{-- <ckeditor :editor="editor" :config="editorConfig"></ckeditor> --}}
-                        {{-- <inline-editor ></inline-editor> --}}
-                        <balloon-editor/>
+                        
                     </card-body>
                 </card>
             </div>
-        </div><div class="row">
-            <div class="col-md-12">
-                <card>
-                    <card-body>
-                        {{-- <ckeditor :editor="editor" :config="editorConfig"></ckeditor> --}}
-                        {{-- <inline-editor ></inline-editor> --}}
-                    </card-body>
-                </card>
-            </div>
-        </div>
+        </div> --}}
+        <grapejs-builder />
     </content-body>
 </div>
 @endtemplate

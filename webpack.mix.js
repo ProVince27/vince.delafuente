@@ -37,7 +37,7 @@ mix.extract([
     /* '@ckeditor/ckeditor5-build-classic', */
     '@ckeditor/ckeditor5-vue',
     '@ckeditor/ckeditor5-build-inline',
-    // '@ckeditor/ckeditor5-editor-balloon',
+    '@ckeditor/ckeditor5-build-balloon',
     '@ckeditor/ckeditor5-ckfinder/src/ckfinder'
 ])
 // .versionHash()

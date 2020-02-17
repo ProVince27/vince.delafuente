@@ -9,7 +9,8 @@ export default {
     components:{
         // 'ckeditor':CKEditor.component,
         // 'inline-editor': () => import('components/editor/ckeditor/inline-ckeditor'),
-        'balloon-editor': () => import('components/editor/ckeditor/balloon-ckeditor')
+        // 'balloon-editor': () => import('components/editor/ckeditor/balloon-ckeditor'),
+        'grapejs-builder': () => import('./components/grapejs-builder')
     },
     data(){
         return {

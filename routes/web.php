@@ -25,14 +25,10 @@ Route::group(['namespace' => 'Navigation'], function () {
 
 Route::group(['namespace' => 'Cms'], function () {
     Route::view('content-management', 'app.pages.page-builder.page-builder-index', ['title' => 'Page Builder'])->name('page.cms.page-builder');
+    // Route::view('');    
 });
 
 Route::group(['namespace' => 'Media'], function(){
     Route::name('ckfinder.upload')->get('media-manager/upload','FileManagerController@upload');
     Route::name('ckfinder.filebrowser')->get('ckfinder/filebrowser','FileManagerController@browseFile');
 });
-
-Route::any('/ckfinder/examples', '\CKSource\CKFinderBridge\Controller\CKFinderController@examplesAction')
-    ->name('ckfinder_examples');
-
-Route::view('ckfinder','app.media.ck-file-manager-widget');
