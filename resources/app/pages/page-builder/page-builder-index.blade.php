@@ -22,7 +22,8 @@
                     <card-body>
                         {{-- <ckeditor :editor="editor" :config="editorConfig"></ckeditor> --}}
                         {{-- <inline-editor ></inline-editor> --}}
-                        <balloon-editor/>
+                        {{-- <balloon-editor/> --}}
+                        <ckeditor />
                     </card-body>
                 </card>
             </div>

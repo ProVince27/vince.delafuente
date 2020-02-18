@@ -18,7 +18,7 @@ mix.setResourceRoot('dist/js/')
 
 /* set the build path */
 mix.webpackConfig({
-    devtool: 'cheap-source-map',
+    // devtool: 'cheap-source-map',
     output: {
         path: path.resolve(__dirname, 'public/'),
         chunkFilename: 'dist/js/[name].js',
@@ -32,10 +32,11 @@ mix.extract([
     'lodash',
     'vuex',
     'vue-context',
-    // 'laravel-file-manager',
     'vuedraggable',
     'moment',
     /* @todo check ckeditor 4  */
+    // 'ckeditor4-vue'
+    /* @for ckeditor5 */
     // '@ckeditor/ckeditor5-build-classic',
     // '@ckeditor/ckeditor5-vue',
     // '@ckeditor/ckeditor5-build-inline',
