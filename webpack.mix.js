@@ -18,6 +18,7 @@ mix.setResourceRoot('dist/js/')
 
 /* set the build path */
 mix.webpackConfig({
+    devtool: 'cheap-source-map',
     output: {
         path: path.resolve(__dirname, 'public/'),
         chunkFilename: 'dist/js/[name].js',
@@ -34,10 +35,10 @@ mix.extract([
     // 'laravel-file-manager',
     'vuedraggable',
     'moment',
-    /* '@ckeditor/ckeditor5-build-classic', */
+    '@ckeditor/ckeditor5-build-classic',
     '@ckeditor/ckeditor5-vue',
     '@ckeditor/ckeditor5-build-inline',
-    // '@ckeditor/ckeditor5-editor-balloon',
+    '@ckeditor/ckeditor5-editor-balloon',
     '@ckeditor/ckeditor5-ckfinder/src/ckfinder'
 ])
 // .versionHash()
