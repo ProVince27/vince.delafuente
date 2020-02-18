@@ -1,6 +1,7 @@
 {
     "plugins": [
        "babel-plugin-syntax-dynamic-import",
+       "babel-plugin-dynamic-import-polyfill",
        ["module-resolver",  {
           "root": ["./"],
           "alias": {
@@ -12,5 +13,14 @@
              "store": "./resources/shared/vue/store"
           }
        }]
+    ],
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "usage",
+                "corejs": "core-js@3"
+            }
+        ]
     ]
  }

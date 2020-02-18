@@ -7,6 +7,7 @@ import { default as Stars } from 'components/extra/StarIndicator'
 import { FormFileInput, FormImage, FormDateRangePicker, FormSelectSearch } from 'components/input'
 import * as tab from 'components/tab'
 import moment from 'moment'
+import { default as tdraggable } from './draggable/test-draggable'
 
 export default {
     name:'dashboard-admin',
@@ -20,7 +21,7 @@ export default {
         FormImage,
         FormDateRangePicker,
         FormSelectSearch,
-        
+        tdraggable
         // addComponents(...contents),
         // addComponents(...buttons)
     },

@@ -4,7 +4,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item dropdown megamenu-li">
-            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home<a>
+            <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
             <div class="dropdown-menu megamenu" aria-labelledby="dropdown01">
                 <div class="row">
                     <div class="col-sm-6 col-lg-3">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <h5>Image</h5>
-                        <img src="https://source.unsplash.com/250x150/?sig=4" alt="..." style="width: 100%;">
+                        <img src="https://source.unsplash.com/250x150/?sig=4" alt="..." style="width: 100%;" />
                     </div>
                 </div>
             </div>

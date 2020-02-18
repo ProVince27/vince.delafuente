@@ -13,15 +13,10 @@
         <row>
             <div class="col-md-6">
                 <card>
-                    
                     <card-header title="Card" />
                     <card-body >
                         <div class="row">
-                            {{-- <div class="col-md-3">
-                                <form-image  width="200px" height="200px" label="Select image" />
-                            </div> --}}
                             <div class="col-md-12">
-                                {{-- <form-image style="width:100% height:320px;" label="Select banner" /> --}}
                                 <form-image
                                     style="width:100px; height:100px;" 
                                     label="Select image" 
@@ -29,25 +24,28 @@
                                     class="img-circle"
                                     accept = "image/jpeg, image/png, image/gif"
                                 >
-                                    <img slot-scope="{data}" v-if="data" showImage :src="data" class="w-100 h-100 img-circle" />
+                                    <img slot-scope="scopedata" v-if="scopedata.data" showImage :src="scopedata.data" class="w-100 h-100 img-circle" />
                                 </form-image>
                             </div>
-                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <info-box>
+                                    <info-box-icon class="bg-info elevation-1" icon="fas fa-cog" />
+                                    <info-box-content>
+                                        <span class="info-box-text">CPU Traffic</span>
+                                        <span class="info-box-number">
+                                            10
+                                        </span>
+                                    </info-box-content>
+                                </info-box>
+                            </div>
                         </div>
                     </card-body>
                     <card-footer class="mx-center">This is footer</card-footer>
                 </card>
             </div>
             <div class="col-md-3 p-10">
-                <info-box>
-                    <info-box-icon class="bg-info elevation-1" icon="fas fa-cog" />
-                    <info-box-content>
-                        <span class="info-box-text">CPU Traffic</span>
-                        <span class="info-box-number">
-                            10
-                        </span>
-                    </info-box-content>
-                </info-box>
                 <div>
                     <form-date-range-picker 
                         format = "DD/MM/YYYY"
@@ -68,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    
+                   
                 </div>
             </div>
             <div class="col-md-3 p-10">
@@ -234,6 +232,15 @@
                 <tabs :tabs="tabs" :active-tab.number="{{ $tab ?? 1}}">
                     <tab id="" href="">{{ $tab }}</tab>
                 </tabs>
+            </div>
+        </row>
+        <row>
+            <div class="col-md-12">
+               <card>
+                   <card-body>
+                    <tdraggable />
+                   </card-body>
+               </card>
             </div>
         </row>
     </content-body>
