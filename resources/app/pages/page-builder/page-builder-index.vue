@@ -1,16 +1,12 @@
 <script>
-// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-// import CKEditor from '@ckeditor/ckeditor5-vue';
-// import InlineCkeditor from 'components/editor/ckeditor/inline-ckeditor'
-import CKEditor from 'ckeditor4-vue';
-
+// import CKEditor from 'ckeditor4-vue';
+import * as TinyEditor from 'components/editor/tiny'
 export default {
     name:'page-builder-index',
     template:'#page-builder-index',
     components:{
-        'ckeditor':CKEditor.component,
-        // 'inline-editor': () => import('components/editor/ckeditor/inline-ckeditor'),
-        // 'balloon-editor': () => import('components/editor/ckeditor/balloon-ckeditor')
+        // 'ckeditor':CKEditor.component,
+        ...TinyEditor
     },
     data(){
         return {

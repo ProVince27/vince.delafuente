@@ -13,8 +13,10 @@ require('laravel-mix-versionhash')
 
 // mix.js('resources/js/app.js', 'public/js')
 // .sass('resources/sass/app.scss', 'public/css');
-mix.js('resources/app.js','dist/js/')
-mix.setResourceRoot('dist/js/')
+mix
+.js('resources/app.js','dist/js/')
+.copy('node_modules/tinymce','public/vendors/tinymce')
+.setResourceRoot('dist/js/')
 
 /* set the build path */
 mix.webpackConfig({
@@ -34,6 +36,7 @@ mix.extract([
     'vue-context',
     'vuedraggable',
     'moment',
+    // 'vue-context',
     /* @todo check ckeditor 4  */
     // 'ckeditor4-vue'
     /* @for ckeditor5 */
